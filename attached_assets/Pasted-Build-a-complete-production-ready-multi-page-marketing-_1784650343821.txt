@@ -1,0 +1,232 @@
+Build a complete, production-ready, multi-page marketing website called "Evolving the Conversation" (an English-language coaching brand for Latin American professionals and corporate teams). Use React (Vite) + Tailwind CSS + React Router. Everything must run with zero errors on npm run dev and be fully responsive (mobile, tablet, desktop).
+
+1. GLOBAL REQUIREMENTS
+Bilingual site (EN / ES): Build a language switcher (toggle button "EN | ES" in the navbar, visible on desktop and inside the mobile menu). Use React Context (LanguageContext) + a single translation dictionary file (translations.js) with keys for every string on every page, in both en and es. Switching language must instantly re-render ALL text on the current page — navbar, hero, body copy, buttons, FAQs, footer — without a page reload. Persist the selected language in localStorage so it stays selected on navigation/refresh.
+Responsive: Mobile-first Tailwind classes. Navbar collapses into a hamburger menu below md breakpoint. All grids (3-column cards, etc.) stack to 1 column on mobile, 2 on tablet, 3 on desktop.
+Smooth scroll to footer on "Contact Us": The "Contact Us" navbar link must NOT navigate to a new page. On click (from any page), it should scroll smoothly to a <footer id="footer"> section that contains phone, email, and address. If the user is on a different page, clicking "Contact Us" should first route to Home (or stay on current page — footer exists on every page) and then smooth-scroll (scrollIntoView({behavior:'smooth'})) to the footer.
+Color palette: Deep navy/blue gradient background (
+#0B1B3F → 
+#13284F → 
+#1E3A6E), white text on dark sections, white background with navy text for light sections, accent light-blue (
+#4FA3E3-ish) for icons/buttons, white pill-shaped and rounded rectangle CTA buttons with navy text.
+Typography: Bold, uppercase, tracked-out headings (Montserrat or Poppins via Google Fonts), clean sans-serif body text.
+Reusable components: Navbar, Footer, Hero, SectionHeading, CardGrid, FAQAccordion, CTAButton, LanguageSwitcher.
+Use royalty-free stock photos from Unsplash (via direct https://images.unsplash.com/... URLs) for all people/office photos referenced below — professionals in meetings, handshakes, corporate teams, a smiling woman for the founder photo placeholder.
+Use simple inline SVG icons (people, lightbulb, puzzle piece, checkmark, phone, mail, pin) — do not use paid icon packs.
+2. SITE STRUCTURE / ROUTES
+/ → Home
+/about → About Me
+/companies → Companies (short landing page)
+/companies/program → Corporate Program Detail (the longer "What Shifts..." page with method/packages/modalities)
+/professionals → Professionals page
+/events → Events (simple placeholder page: heading "Events" + "Upcoming sessions coming soon" + CTA button, in both languages)
+/blogs → Blogs (placeholder grid of 3 blog post cards with dummy titles/images + "Read More" buttons)
+Footer appears on every page.
+3. NAVBAR (all pages)
+
+Logo left: "EVOLVING" (bold navy, "THE CONVERSATION" small caps subtitle below it) with a small blue geometric icon (two rounded rectangles) to the left of the wordmark. Nav links (right-aligned): Home | Programs | Events | About Me | Blogs | Contact Us, followed by the EN/ES language switcher.
+
+"Programs" is a dropdown/hover menu with links to: Companies, Professionals, Corporate Program Detail.
+Sticky navbar with white background, subtle bottom border, blue underline accent bar directly beneath the whole navbar.
+Mobile: hamburger icon opens a slide-down menu with the same links stacked vertically, plus the language switcher at the bottom.
+4. PAGE-BY-PAGE CONTENT (build EXACT copy in English; translate naturally and accurately to Spanish for the es dictionary — do not machine-translate literally, make it read naturally for a Latin American professional audience)
+HOME PAGE
+
+Hero section (dark navy gradient background, image of a diverse professional team in the background, subtle overlay):
+
+H1: "PROFESSIONAL ENGLISH FOR THE CONVERSATIONS THAT MOVE YOU FORWARD"
+Subtext: "We help Latin American professionals and corporate teams communicate in English with clarity, confidence, and ease so they can participate, lead, interview, present, and grow in global workplaces."
+Button: "SCHEDULE A SESSION" (white pill button, navy text)
+3 small pill tags below the button: "Company" | "Professional" | "Workshops" — each links to Companies, Professionals, and an Events/Workshops anchor respectively.
+
+Short Belief section (white background, 2-column: text left, image right of two professionals shaking hands / team in discussion):
+
+Small label: "SHORT BELIEF"
+Bold H2: "Because Communication Is Not Only About Words. It Is About Being Part Of The Conversation."
+Body: "In a world where technology can translate almost anything, English still helps professionals speak for themselves, build trust, and show up with confidence in the moments that matter."
+
+Choose Your Path section (navy gradient background, centered heading, 3 cards):
+
+H2: "CHOOSE YOUR PATH"
+Card 1 — icon: people/group — Title: "COMPANIES" — Text: "English training for teams that need to communicate clearly, participate actively, and build stronger relationships with global colleagues." — Button: "Explore" → links to /companies
+Card 2 — icon: lightbulb/head — Title: "PROFESSIONALS" — Text: "Support for professionals who want to stop staying quiet and start speaking with more confidence in real work situations." — Button: "Explore" → links to /professionals
+Card 3 — icon: puzzle piece — Title: "WORKSHOPS" — Text: "Practical sessions for professionals who want to keep practicing, learn useful phrases, and feel more comfortable using English." — Button: "Explore" → links to /events
+
+What Makes Us Different section (white background, image of a team collaborating at a table):
+
+H2: "WHAT MAKES US DIFFERENT"
+Subheading: "English With Structure, Confidence, And Humanity."
+Body: "Our approach helps professionals practice real conversations, receive useful feedback, and build the confidence to communicate beyond translation."
+
+Closing Banner (navy background with subtle silhouette graphic of people):
+
+H2: "YOUR ENGLISH DOES NOT HAVE TO BE PERFECT TO BE POWERFUL."
+Subtext: "The goal is progress, participation, confidence, and ease."
+Button: "SCHEDULE A SESSION"
+ABOUT ME PAGE
+
+Hero (navy background, bordered box like a call-out):
+
+H1: "UNLOCKING A NEW ERA OF ENGLISH LEARNING."
+Body: "In a world where learning drives success, how we learn matters more than ever. By combining psychology with coaching, we've created a more effective way to learn English focused on building confidence, improving mindset, and making real, meaningful connections. It's not just about learning English, but using it with clarity and confidence in real life."
+Button: "SCHEDULE A SESSION"
+
+Our Founder section (gray background, photo of a smiling professional woman with glasses on the right, text on left):
+
+Label: "OUR FOUNDER"
+Name: "MARICHELLE CINIGLIO"
+Bullet: "Every morning, I wake up motivated to help others learn and grow — to better understand themselves, connect with others, and build new skills."
+Subheading: "EXPERIENCE & EDUCATION"
+Bullet: "With over 25 years of experience in education, psychology, counseling, and coaching, she holds two postgraduate degrees and certifications in English, Spanish, and coaching. She has worked in the United States and Panama and developed programs focused on building confidence, shifting mindsets, and meaningful connection."
+
+Our Pillars section (navy background, 3 cards):
+
+H2: "OUR PILLARS"
+Card 1 — icon: shield/people — "CONFIDENCE" — "This program removes the biggest barrier to learning: lack of confidence. It creates a safe space for real conversation from day one."
+Card 2 — icon: lightbulb — "MINDSET" — "Classes immerse participants in English from the start, shifting focus from learning the language to using it for personal and professional growth."
+Card 3 — icon: puzzle piece — "RELEVANCE" — "Content is tailored to each participant's professional needs, integrating real-world workplace scenarios and challenges."
+
+Our Programs section (white background, 2 image cards side by side):
+
+H2: "OUR PROGRAMS"
+Card 1: image of a corporate team — "FOR CORPORATIONS" — bullets: "Group Program By Level" / "1:1 Program For Key Roles" / "Conversational Workshops" / "Assessment + Report"
+Card 2: image of a professional presenting — "FOR PROFESSIONALS" — bullets: "Essential Package" / "Progress Package" / "Momentum Package"
+
+FAQ / Questions section (navy background, accordion):
+
+H2: "QUESTIONS?"
+Reuse the 5 Professionals FAQ items (see below) in an expandable accordion (click to expand/collapse, "+" icon rotates to "×" when open).
+COMPANIES PAGE (/companies)
+Small gray label above hero: "Companies Page" is NOT shown to users — skip it (it was a design-file label only).
+Hero (navy background, image of a corporate team meeting):
+H1: "ENGLISH TRAINING THAT HELPS YOUR TEAM SPEAK UP, CONTRIBUTE, AND GROW."
+Body: "We help companies support professionals who need English to participate in meetings, build trust with global teams, and grow with more confidence."
+Problem / What We Offer (white background, 2-column):
+Left: "PROBLEM" label — H3: "Your Employees May Have Ideas, But English Can Keep Them Quiet." — Body: "Many professionals understand English, but hesitate when the conversation moves too fast or the pressure feels too high."
+Right (card with border): "WHAT WE OFFER" label — H3: "Corporate English Programs" — Body: "Structured English programs for teams that need practical workplace communication, stronger participation, and more confidence using English at work."
+FAQs (navy background, accordion, 5 items):
+Q: "Why choose Evolving the Conversation instead of another English academy?" A: "Because we focus on professional English for real workplace situations. Our programs are not only about grammar or general English. We help professionals participate, ask questions, present ideas, communicate with global teams, and use English with more confidence at work."
+Q: "How can English training support career growth inside a company?" A: "English can help employees become more visible, participate more actively, and prepare for bigger opportunities. For many professionals, stronger English communication supports leadership presence, internal mobility, interviews, presentations, and professional growth."
+Q: "Do you offer English assessments for hiring or candidate selection?" A: "Yes. We can create English requirements for companies that need to evaluate candidates for roles where English is important. These assessments can be adapted depending on the position and the communication skills required."
+Q: "Do you offer assessments for current employees?" A: "Yes. We can assess current employees to understand their level, identify strengths and gaps, and place them in the right training program."
+Q: "Do you publish corporate prices?" A: "No. Corporate programs are customised based on the number of participants, schedule, assessments, workshops, and reporting needs. The best next step is to request a corporate consultation."
+Closing banner: H2: "LET'S CREATE A PROGRAM THAT SUPPORTS YOUR TEAM'S REAL COMMUNICATION NEEDS." + button "REQUEST PROPOSAL" linking to /companies/program.
+CORPORATE PROGRAM DETAIL PAGE (/companies/program)
+
+Hero (navy gradient, image of a team pointing at a laptop):
+
+H1: "WHAT SHIFTS WHEN YOUR TEAM IS BUILT FOR THE REAL WORKPLACE"
+
+3 feature cards (white cards on navy background):
+
+"MEETINGS" — bullets: "Key Phrases For Intervening, Clarifying, And Closing Agreements" / "Confidently Asking For Clarification With Ease" / "Professional Follow-Ups: Summarizing Agreements And Next Steps" / "More Participation, Less Silence, No Falling Behind"
+"PRESENTATIONS" — bullets: "Organize Your Ideas To Speak Clearly Even With Simple English" / "Professionally Structured Messages In Simple English" / "Smoother Speaking Rhythm And Clearer Delivery, Fewer Speech Blocks" / "Answer Questions With Confidence, Control, And Less Stress"
+"BUSINESS ENGLISH" — bullets: "Do Small Talk Without It Feeling Forced" / "Write Clear, Professional Emails And Messages" / "Explain Ideas With Less Mental Translation" / "Sound More Natural Using Real, Everyday Phrases, Not Textbook English"
+
+Each card row ends with two buttons: "FREE CONSULTATION" and "REQUEST PROPOSAL".
+
+CTA strip (white background, 2-column: heading left, paragraph + bullets right):
+
+Left H2: "SPEAK ENGLISH AT WORK WITH CONFIDENCE EVEN WHEN YOUR MIND GOES BLANK"
+Right body: "Professional English training for multinational teams and professionals across Latin America, focused on real-world communication for meetings, presentations, and daily collaboration — built with structure, guided practice, and continuous follow-up."
+Bullets: "Clearer And More Professional Presentations" / "Measurable HR/L&D Progress With Assessments And Reports" / "More Active Participation In English Meetings And Conversations"
+Buttons: "FREE SESSION" and "REQUEST PROPOSAL"
+
+Stronger English Communication section (navy background, 3 bullet rows with a subtle background silhouette image):
+
+H2: "STRONGER ENGLISH COMMUNICATION"
+"Teams That Work With Fewer Communication Slowdowns, Silences, Or Being Left Behind"
+"Professionals With Real Understanding, Not Just Recognition, During Meetings"
+"Companies Aiming To Strengthen Global Reach, Results, Leadership, Consistency, And Continuity"
+
+English + Coaching Method section (white/light-blue background, 3 numbered cards):
+
+H2: "ENGLISH + COACHING METHOD"
+Subtext: "We blend language practice with coaching tools to build confident, consistent English use."
+01 "Confidence Through Clarity" — "Structure, functional phrases, and guided practice to eliminate 'freeze' moments."
+02 "Growth Mindset" — "A system built for real corporate environments."
+03 "Real Relevance" — "Real business scenarios, meaningful vocabulary, leadership, and collaboration."
+
+Simple Model section (navy background, 3 columns):
+
+H2: "SIMPLE MODEL: STRUCTURE, PRACTICE, CONTINUITY"
+Col 1: "No Resets And Restarts" — "Regular, comfortable practice to retain progress."
+Col 2: "Format: Online" — "Duration: 60 Minutes Per Class"
+Col 3: "System" — "Packages with 4/8/16/30 sessions per month depending on your plan."
+
+What The Packages Include section (light blue background, 7 numbered cards, grid):
+
+H2: "WHAT THE PACKAGES INCLUDE"
+01 "Initial Assessment" — "Level + communication needs by role/field."
+02 "Progress Map" — "Clear objectives and tracking."
+03 "Live Sessions" — "Delivered in the format that fits your team's professional English needs."
+04 "Guided Practice" — "Key phrases, real conversation, and real-life scenarios."
+05 "Support Resources" — "Key phrases, mini lessons, and practical guides."
+06 "Progress Tracking" — "Where participants started and what's next."
+07 "Progress Reports" — "For HR/L&D teams."
+
+Implementation Modalities section (navy background, 4 rows):
+
+H2: "IMPLEMENTATION MODALITIES"
+"Group Program By Level (3–9 Participants)" — "Guided group sessions to build fluency and real communication." — button "FREE CONSULTATION"
+"1:1 Program For Key Roles (Leaders / High Exposure)" — "Customized training for meetings, presentations, and leadership communication." — button "FREE CONSULTATION"
+"Conversational Workshops (For Larger Teams)" — "Workshops for guided practice, vocabulary, and real-life scenarios." — button "FREE CONSULTATION"
+"Assessment + Report (Diagnostic Only, If Needed First)" — "Ideal for companies that want clarity before implementing a program." — button "FREE CONSULTATION"
+
+Closing banner: H2: "DO YOU WANT A CLEAR, MEASURABLE, AND ACTIONABLE CORPORATE PROGRAM?" + CTA button "REQUEST PROPOSAL"
+
+PROFESSIONALS PAGE (/professionals)
+Hero (navy background, image of a professional speaking confidently):
+H1: "PROFESSIONAL ENGLISH FOR THE CONVERSATIONS THAT MATTER AT WORK."
+Body: "We help professionals communicate in English with clarity, confidence, and professional presence in meetings, presentations, and professional conversations."
+Problem section (white background):
+Label: "PROBLEM" — H3: "You Have Ideas. English Should Not Be The Reason You Hold Them Back." — Body: "Many professionals understand English when it is read or heard, but they freeze, translate in their head, worry about mistakes, or hesitate the moment they have to speak."
+What We Help You Do section (navy background, 4 items with checkmark icons, 2x2 grid):
+H2: "WHAT WE HELP YOU DO"
+"Speak With More Confidence" — "Practice real-world conversations so you can participate with less hesitation."
+"Organize Your Ideas" — "Learn how to explain your thoughts, questions, and opinions clearly."
+"Sound More Professional" — "Improve your pronunciation, vocabulary, structure, and delivery in workplace situations."
+"Prepare For Important Moments" — "Get support for meetings, presentations, interviews, and career-defining moments where English matters."
+FAQs (navy background, accordion, 5 items):
+Q: "Why choose Evolving the Conversation instead of another English academy?" A: "Because it is not about memorizing more English. It is about learning how to use the English you already have with more confidence, structure, and purpose in real professional situations."
+Q: "How can this help my career growth?" A: "English can help you participate more actively, present ideas with confidence, and become more visible with global teams and in professional opportunities."
+Q: "What if I understand English but freeze when I have to speak?" A: "That is very common. Many professionals understand more English than they feel ready to use. Our programs help you practice speaking in a structured, supportive way so you can build confidence over time."
+Q: "Do you need perfect English to start?" A: "No. The goal is not perfection. The goal is progress, participation, and confidence."
+Q: "How do I know which program is right for me?" A: "The best first step is to schedule a conversation. We will talk about your level, goals, schedule, and the situations where you need English most, then recommend the best option."
+Closing banner: H2: "YOUR ENGLISH DOES NOT HAVE TO BE PERFECT TO BE POWERFUL." + button "SCHEDULE A SESSION"
+5. FOOTER (every page, id="footer")
+
+Dark navy background, 4 columns (stacks to 1 column on mobile):
+
+Logo + tagline "EVOLVING THE CONVERSATION"
+Contact info with icons: Phone (placeholder — replace with real number), Email hello@evolvingtheconversation.com (placeholder), Address (placeholder — replace with real business address). Clearly comment in the code // TODO: replace with real contact details since these were placeholders in the design file.
+"Company" links: Home, About, Blog, Programs, Contact
+"Help" links: Customer Support, Terms & Conditions, Privacy Policy
+Newsletter box: "Subscribe to our newsletter" — "The latest insights, resources, helpful opinions, and company news." — email input + "Subscribe" button (non-functional, just UI with a success toast on click).
+
+Bottom bar: small copyright line "© 2026 Evolving the Conversation. All rights reserved."
+
+6. TRANSLATION FILE STRUCTURE
+
+Create src/translations.js exporting:
+
+js
+export const translations = {
+  en: { nav: {...}, home: {...}, about: {...}, companies: {...}, companiesProgram: {...}, professionals: {...}, events: {...}, blogs: {...}, footer: {...} },
+  es: { /* same structure, natural Spanish */ }
+};
+
+Every single visible string in the app must come from this dictionary via a useLanguage() hook (const { t, lang, setLang } = useLanguage()), no hardcoded English strings anywhere in JSX.
+
+7. TECHNICAL CHECKLIST (must all pass before finishing)
+ npm run dev starts with zero console errors/warnings.
+ Every route renders without errors.
+ Language switcher changes 100% of visible text instantly on every page.
+ Language preference persists across route changes and page refresh (localStorage).
+ "Contact Us" in navbar smooth-scrolls to the footer from any page.
+ All pages fully responsive from 320px to 1920px wide.
+ FAQ accordions expand/collapse correctly with animation.
+ All images have alt text (translated too) and lazy-loading (loading="lazy").
+ No broken links, no missing imports, no unused variables causing build warnings.
+
+Build this now, page by page, and show me a working preview when done

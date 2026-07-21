@@ -1,0 +1,56 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Toaster } from '@/components/ui/toaster';
+import { TooltipProvider } from '@/components/ui/tooltip';
+import { Route, Switch, Router as WouterRouter } from 'wouter';
+import { LanguageProvider } from '@/context/LanguageContext';
+import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
+
+import { Home } from '@/pages/Home';
+import { About } from '@/pages/About';
+import { Companies } from '@/pages/Companies';
+import { CompaniesProgram } from '@/pages/CompaniesProgram';
+import { Professionals } from '@/pages/Professionals';
+import { Events } from '@/pages/Events';
+import { Blogs } from '@/pages/Blogs';
+import NotFound from '@/pages/not-found';
+
+const queryClient = new QueryClient();
+
+function Router() {
+  return (
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/companies" component={Companies} />
+      <Route path="/companies/program" component={CompaniesProgram} />
+      <Route path="/professionals" component={Professionals} />
+      <Route path="/events" component={Events} />
+      <Route path="/blogs" component={Blogs} />
+      <Route component={NotFound} />
+    </Switch>
+  );
+}
+
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <LanguageProvider>
+          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+            <div className="min-h-[100dvh] flex flex-col font-sans">
+              <Navbar />
+              <main className="flex-grow">
+                <Router />
+              </main>
+              <Footer />
+            </div>
+          </WouterRouter>
+          <Toaster />
+        </LanguageProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+}
+
+export default App;
