@@ -9,7 +9,8 @@ export const translations = {
       contact: "Contact Us",
       companies: "Companies",
       professionals: "Professionals",
-      corporateDetail: "Corporate Program Detail"
+      corporateDetail: "Corporate Program Detail",
+      pricing: "Pricing"
     },
     footer: {
       tagline: "EVOLVING THE CONVERSATION",
@@ -222,7 +223,72 @@ export const translations = {
       { q: "What if I understand English but freeze when I have to speak?", a: "That is very common. Many professionals understand more English than they feel ready to use. Our programs help you practice speaking in a structured, supportive way so you can build confidence over time." },
       { q: "Do you need perfect English to start?", a: "No. The goal is not perfection. The goal is progress, participation, and confidence." },
       { q: "How do I know which program is right for me?", a: "The best first step is to schedule a conversation. We will talk about your level, goals, schedule, and the situations where you need English most, then recommend the best option." }
-    ]
+    ],
+    pricing: {
+      hero: {
+        title: "INDIVIDUAL ENGLISH PACKAGES",
+        subtext: "Choose the plan that fits your pace. All packages are delivered online, one-on-one, with a certified coach."
+      },
+      mostPopular: "Most Popular",
+      participant: "1 participant",
+      buyNow: "Buy Now",
+      taxNote: "Includes ITBMS (Panama VAT)",
+      disclaimer: "Prices are in USD and include all applicable taxes. No hidden fees.",
+      feat1: "Online, one-on-one with a certified coach",
+      feat2: "Flexible schedule — set your own class times",
+      feat3: "Progress tracking and personalized feedback",
+      packages: [
+        {
+          name: "Package #1",
+          freq: "3 online individual classes per week",
+          price: "$600.00",
+          priceNum: 600,
+          subtotal: "$560.75",
+          itbms: "$39.25"
+        },
+        {
+          name: "Package #2",
+          freq: "2 online individual classes per week",
+          price: "$440.00",
+          priceNum: 440,
+          subtotal: "$411.21",
+          itbms: "$28.79"
+        },
+        {
+          name: "Package #3",
+          freq: "1 online individual class per week",
+          price: "$240.00",
+          priceNum: 240,
+          subtotal: "$224.30",
+          itbms: "$15.70"
+        }
+      ]
+    },
+    checkout: {
+      title: "Complete Your Purchase",
+      orderSummary: "Order Summary",
+      subtotal: "Subtotal",
+      itbms: "ITBMS (Panama VAT)",
+      total: "Total",
+      fullName: "Full Name",
+      fullNamePlaceholder: "Jane Smith",
+      email: "Email Address",
+      emailPlaceholder: "jane@example.com",
+      cardNumber: "Card Number",
+      cardNumberPlaceholder: "1234 5678 9012 3456",
+      expiry: "Expiry",
+      expiryPlaceholder: "MM / YY",
+      cvc: "CVC",
+      cvcPlaceholder: "123",
+      payBtn: "Pay",
+      stripeNote: "Payments securely processed by Stripe",
+      processing: "Processing payment...",
+      successTitle: "Payment Successful!",
+      successNote: "A confirmation email has been sent to",
+      backHome: "Back to Home",
+      participant: "1 participant",
+      close: "Close"
+    }
   },
   es: {
     nav: {
@@ -234,7 +300,8 @@ export const translations = {
       contact: "Contáctanos",
       companies: "Empresas",
       professionals: "Profesionales",
-      corporateDetail: "Detalles del Programa Corporativo"
+      corporateDetail: "Detalles del Programa Corporativo",
+      pricing: "Precios"
     },
     footer: {
       tagline: "EVOLVING THE CONVERSATION",
@@ -441,6 +508,71 @@ export const translations = {
       { q: "¿Ofrecen evaluaciones para empleados actuales?", a: "Sí. Podemos evaluar a los empleados actuales para entender su nivel, identificar fortalezas y áreas de mejora, y ubicarlos en el programa de capacitación adecuado." },
       { q: "¿Publican precios corporativos?", a: "No. Los programas corporativos se personalizan según el número de participantes, horarios, evaluaciones, talleres y necesidades de informes. El mejor paso a seguir es solicitar una consulta corporativa." }
     ],
+    pricing: {
+      hero: {
+        title: "PAQUETES INDIVIDUALES DE INGLÉS",
+        subtext: "Elige el plan que se ajuste a tu ritmo. Todos los paquetes se imparten en línea, de manera individual, con un coach certificado."
+      },
+      mostPopular: "Más Popular",
+      participant: "1 participante",
+      buyNow: "Comprar Ahora",
+      taxNote: "Incluye ITBMS (impuesto de Panamá)",
+      disclaimer: "Los precios están en USD e incluyen todos los impuestos aplicables. Sin cargos ocultos.",
+      feat1: "En línea, individual con un coach certificado",
+      feat2: "Horario flexible — elige tus horarios de clase",
+      feat3: "Seguimiento de progreso y retroalimentación personalizada",
+      packages: [
+        {
+          name: "Paquete #1",
+          freq: "3 clases individuales en línea por semana",
+          price: "$600.00",
+          priceNum: 600,
+          subtotal: "$560.75",
+          itbms: "$39.25"
+        },
+        {
+          name: "Paquete #2",
+          freq: "2 clases individuales en línea por semana",
+          price: "$440.00",
+          priceNum: 440,
+          subtotal: "$411.21",
+          itbms: "$28.79"
+        },
+        {
+          name: "Paquete #3",
+          freq: "1 clase individual en línea por semana",
+          price: "$240.00",
+          priceNum: 240,
+          subtotal: "$224.30",
+          itbms: "$15.70"
+        }
+      ]
+    },
+    checkout: {
+      title: "Completa Tu Compra",
+      orderSummary: "Resumen del Pedido",
+      subtotal: "Subtotal",
+      itbms: "ITBMS (impuesto de Panamá)",
+      total: "Total",
+      fullName: "Nombre Completo",
+      fullNamePlaceholder: "Ana García",
+      email: "Correo Electrónico",
+      emailPlaceholder: "ana@ejemplo.com",
+      cardNumber: "Número de Tarjeta",
+      cardNumberPlaceholder: "1234 5678 9012 3456",
+      expiry: "Vencimiento",
+      expiryPlaceholder: "MM / AA",
+      cvc: "CVC",
+      cvcPlaceholder: "123",
+      payBtn: "Pagar",
+      stripeNote: "Pagos procesados de forma segura por Stripe",
+      processing: "Procesando pago...",
+      successTitle: "¡Pago Exitoso!",
+      successNote: "Se ha enviado un correo de confirmación a",
+      backHome: "Volver al Inicio",
+      participant: "1 participante",
+      close: "Cerrar"
+    },
     faqProfessionals: [
       { q: "¿Por qué elegir Evolving the Conversation en lugar de otra academia de inglés?", a: "Porque no se trata de memorizar más inglés. Se trata de aprender a usar el inglés que ya tienes con más confianza, estructura y propósito en situaciones profesionales reales." },
       { q: "¿Cómo puede esto ayudar a mi crecimiento profesional?", a: "El inglés puede ayudarte a participar más activamente, presentar ideas con confianza y volverte más visible ante equipos globales y en oportunidades profesionales." },

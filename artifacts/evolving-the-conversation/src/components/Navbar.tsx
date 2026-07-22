@@ -73,6 +73,10 @@ export function Navbar() {
               {t('nav.about')}
             </Link>
 
+            <Link href="/pricing" className={cn("text-sm font-semibold hover:text-primary transition-colors", location === '/pricing' ? 'text-primary' : 'text-gray-600')}>
+              {t('nav.pricing')}
+            </Link>
+
             <Link href="/blogs" className={cn("text-sm font-semibold hover:text-primary transition-colors", location === '/blogs' ? 'text-primary' : 'text-gray-600')}>
               {t('nav.blogs')}
             </Link>
@@ -124,6 +128,7 @@ export function Navbar() {
 
           <Link href="/events" className="font-semibold text-gray-800" onClick={() => setMobileMenuOpen(false)}>{t('nav.events')}</Link>
           <Link href="/about" className="font-semibold text-gray-800" onClick={() => setMobileMenuOpen(false)}>{t('nav.about')}</Link>
+          <Link href="/pricing" className="font-semibold text-gray-800" onClick={() => setMobileMenuOpen(false)}>{t('nav.pricing')}</Link>
           <Link href="/blogs" className="font-semibold text-gray-800" onClick={() => setMobileMenuOpen(false)}>{t('nav.blogs')}</Link>
           <button onClick={handleContactUs} className="font-semibold text-gray-800 text-left">{t('nav.contact')}</button>
           

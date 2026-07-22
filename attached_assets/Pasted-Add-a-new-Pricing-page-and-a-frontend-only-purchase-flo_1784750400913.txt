@@ -1,0 +1,70 @@
+Add a new Pricing page and a frontend-only purchase flow to the existing "Evolving the Conversation" website. Keep all existing pages, components, styling conventions, and the EN/ES language system exactly as they are — this is an addition, not a rebuild.
+
+1. NAVBAR CHANGE
+
+Add a new nav link "Pricing" (translated to "Precios" in Spanish) between "About Me" and "Blogs" (adjust position if it looks better between "Programs" and "Events" — use your judgment for visual balance). It routes to /pricing. Add it to both desktop nav and the mobile hamburger menu. Add the translation keys to translations.js under both en.nav and es.nav.
+
+2. NEW PRICING PAGE (/pricing)
+
+Build a new page matching the site's existing visual style (navy gradient hero, white content sections, same fonts/buttons/spacing as other pages).
+
+Hero section (navy gradient background):
+
+H1 (EN): "INDIVIDUAL ENGLISH PACKAGES" / (ES): "PAQUETES INDIVIDUALES DE INGLÉS"
+Subtext (EN): "Choose the plan that fits your pace. All packages are delivered online, one-on-one, with a certified coach." / (ES): "Elige el plan que se ajuste a tu ritmo. Todos los paquetes se imparten en línea, de manera individual, con un coach certificado."
+
+Packages grid — 3 cards, side by side on desktop, stacked on mobile. Use ONLY these 3 packages (ignore all corporate/group packages and combined add-ons from the spreadsheet — those are NOT part of this page):
+
+Card	Title (EN)	Título (ES)	Classes	Price (USD)	Tax breakdown
+1	Package #1	Paquete #1	3 online individual classes per week	$600.00	Subtotal: $560.75 · ITBMS: $39.25
+2	Package #2	Paquete #2	2 online individual classes per week	$440.00	Subtotal: $411.21 · ITBMS: $28.79
+3	Package #3	Paquete #3	1 online individual class per week	$240.00	Subtotal: $224.30 · ITBMS: $15.70
+
+Each card must show:
+
+Package name as the card title
+The class frequency as a subtitle/description (translate to Spanish: "3 clases individuales en línea por semana", "2 clases individuales en línea por semana", "1 clase individual en línea por semana")
+"1 participant" / "1 participante" as a small tag
+Big price display: $600.00 USD (final price, bold, large)
+Smaller line below in muted gray text: "Subtotal: $560.75 · ITBMS incluido: $39.25" (and equivalent for each card) — label this line (EN) "Includes ITBMS (Panama VAT)" / (ES) "Incluye ITBMS (impuesto de Panamá)"
+A "Buy Now" / "Comprar Ahora" button at the bottom of each card (make Package #1, the highest tier, visually highlighted as "Most Popular" / "Más Popular" with a badge and slightly elevated/bordered card style — standard pricing-page convention)
+
+Below the 3 cards, add a small reassurance line (EN): "Prices are in USD and include all applicable taxes. No hidden fees." / (ES): "Los precios están en USD e incluyen todos los impuestos aplicables. Sin cargos ocultos."
+
+3. PURCHASE FLOW — FRONTEND ONLY (NO REAL PAYMENT PROCESSING YET)
+
+Important: This is UI/UX scaffolding only. Do NOT integrate real Stripe API keys, do NOT create a real backend charge, and do NOT try to process an actual payment. The goal is a complete, realistic-looking checkout flow that the PM can review, with Stripe wired in later.
+
+When the user clicks "Buy Now" on any package card:
+
+Open a checkout modal/page (/checkout?package=1 style, or a modal overlay — your choice, whichever fits the existing design system better) styled to look like a real Stripe Checkout page:
+Order summary at top: package name, class frequency, price breakdown (subtotal + ITBMS + total), matching the card that was clicked.
+A form with: Full Name, Email, and a mock card input UI (styled like Stripe Elements: card number, expiry, CVC fields — visually realistic, using placeholder formatting/masking, but NOT actually validating real card numbers or connecting to any payment API).
+A "Pay $[amount]" button.
+Small badge/text: "Payments securely processed by Stripe" with the Stripe logo (SVG), to match real checkout UX conventions.
+On clicking "Pay", since there's no real backend yet, simulate the flow:
+Show a brief loading spinner (1–2 seconds, fake delay) labeled "Processing payment..." / "Procesando pago..."
+Then show a success confirmation screen: checkmark icon, "Payment Successful!" / "¡Pago Exitoso!", order summary recap, and a note: "A confirmation email has been sent to [email entered]." / "Se ha enviado un correo de confirmación a [email]."
+Add a "Back to Home" / "Volver al Inicio" button on the confirmation screen.
+Add a clear code comment at the top of the checkout component:
+   // TODO: Replace mock payment simulation with real Stripe Checkout / Payment Intents integration.
+   // Requires STRIPE_SECRET_KEY (backend) and STRIPE_PUBLISHABLE_KEY (frontend) once PM provides Stripe account credentials.
+   // Currently simulates success after a fake delay — no real charge occurs.
+4. TRANSLATIONS
+
+Add all new strings (nav link, hero, all 3 package names/descriptions/price labels, checkout form labels, success screen copy) to both en and es sections of translations.js, following the exact same useLanguage() / t() pattern already used across the rest of the site. No hardcoded strings in JSX.
+
+5. RESPONSIVENESS
+Pricing cards: 3-column on desktop, 1-column stacked on mobile, with the "Most Popular" card still visually distinct on mobile.
+Checkout modal/page: full-screen on mobile, centered modal (max-width ~480px) on desktop.
+6. CHECKLIST BEFORE FINISHING
+ "Pricing" appears in navbar (desktop + mobile) and routes correctly.
+ Only the 3 individual packages appear — no corporate/group/combined packages.
+ Prices, subtotal, and ITBMS match the table above exactly.
+ Buy Now opens the mock checkout flow — no real API calls, no console errors.
+ Success screen displays correctly with entered name/email.
+ Language switch (EN/ES) updates every string on this page and in the checkout flow instantly.
+ Fully responsive on mobile and desktop.
+ npm run dev builds with zero errors/warnings.
+
+Build this now and show me a working preview.
