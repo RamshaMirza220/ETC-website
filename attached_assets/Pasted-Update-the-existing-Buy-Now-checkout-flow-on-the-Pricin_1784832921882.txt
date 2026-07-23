@@ -1,0 +1,42 @@
+Update the existing "Buy Now" checkout flow on the Pricing page. It currently simulates a Stripe-style checkout — change it to simulate a PayPal-style checkout instead. This is still frontend-only / UI simulation only — do NOT integrate the real PayPal SDK, do NOT create real API calls, do NOT process any real payment. This is a visual/UX mockup for PM review before real PayPal credentials are available.
+
+1. UPDATE THE CHECKOUT MODAL/PAGE
+
+Replace the mock card-input form (card number, expiry, CVC) with a PayPal-style checkout UI:
+
+Keep the order summary at the top exactly as it is (package name, class frequency, price breakdown with subtotal + ITBMS + total).
+Replace the payment section with a PayPal button styled to closely match PayPal's real checkout button (yellow/gold "PayPal" pill-shaped button with the PayPal wordmark/logo — use an inline SVG or the standard PayPal logo colors: Pantone blue 
+#003087 and blue 
+#0070BA text on a gold 
+#FFC439 button background).
+Below the PayPal button, add a smaller secondary option styled as a bordered button: "Pay with Debit or Credit Card" / "Pagar con Tarjeta de Débito o Crédito" (also part of real PayPal checkout flows, for guest checkout) — this can lead to the same mock flow.
+Add the standard trust badge text below the button: "Secure payment powered by PayPal" / "Pago seguro con PayPal", with the PayPal logo mark.
+Keep the Full Name and Email fields above the button (needed for the mock confirmation screen).
+2. MOCK FLOW BEHAVIOR
+
+When the user clicks the PayPal button (or the card button):
+
+Show a brief loading state simulating redirect: a centered spinner with text "Redirecting to PayPal..." / "Redirigiendo a PayPal..." for about 1–1.5 seconds.
+Then simulate the PayPal popup/redirect screen: show a simplified mock "PayPal login" panel (PayPal logo, fake email/password fields, a gold "Log In" button) — purely cosmetic, clicking "Log In" just continues the flow, no real auth. (If this feels like too much scope, a simpler alternative is acceptable: skip straight from the loading spinner to the confirmation step below — use your judgment on which feels cleaner within the existing modal design.)
+Show a loading state again: "Processing your payment..." / "Procesando tu pago..." for 1–2 seconds.
+Show the same success confirmation screen already built: checkmark icon, "Payment Successful!" / "¡Pago Exitoso!", order summary recap, "A confirmation email has been sent to [email entered]." / "Se ha enviado un correo de confirmación a [email]", and a "Back to Home" / "Volver al Inicio" button.
+3. CODE COMMENTS
+
+Update the existing TODO comment at the top of the checkout component to:
+
+// TODO: Replace mock PayPal simulation with real PayPal Checkout SDK / Orders API integration.
+// Requires PAYPAL_CLIENT_ID (frontend) and PAYPAL_CLIENT_SECRET (backend) once PM provides PayPal business account credentials.
+// Currently simulates a PayPal redirect + login + success flow after fake delays — no real charge occurs, no real PayPal SDK is loaded.
+4. TRANSLATIONS
+
+Update all new/changed strings ("Redirecting to PayPal...", "Log In", "Pay with Debit or Credit Card", "Secure payment powered by PayPal", "Processing your payment...", etc.) in both en and es sections of translations.js, following the existing pattern. Remove any leftover Stripe-specific strings/branding that are no longer used.
+
+5. CHECKLIST
+ "Buy Now" opens the checkout flow with PayPal branding (gold button, PayPal logo, blue accents) — no Stripe branding/logo remains anywhere.
+ Full mock flow runs end-to-end: loading → (optional mock login) → processing → success screen.
+ No real PayPal SDK, API keys, or network calls involved — everything is simulated client-side.
+ Language switch (EN/ES) updates every string in the new flow instantly.
+ Fully responsive on mobile and desktop.
+ npm run dev builds with zero errors/warnings.
+
+Build this now

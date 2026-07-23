@@ -1,10 +1,10 @@
-// TODO: Replace mock payment simulation with real Stripe Checkout / Payment Intents integration.
-// Requires STRIPE_SECRET_KEY (backend) and STRIPE_PUBLISHABLE_KEY (frontend) once PM provides Stripe account credentials.
-// Currently simulates success after a fake delay — no real charge occurs.
+// TODO: Replace mock PayPal simulation with real PayPal Checkout SDK / Orders API integration.
+// Requires PAYPAL_CLIENT_ID (frontend) and PAYPAL_CLIENT_SECRET (backend) once PM provides PayPal business account credentials.
+// Currently simulates a PayPal redirect + login + success flow after fake delays — no real charge occurs, no real PayPal SDK is loaded.
 
 import { useState, useRef } from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import { X, CheckCircle, Loader2, Lock } from "lucide-react";
+import { X, CheckCircle, Loader2 } from "lucide-react";
 import { useLocation } from "wouter";
 
 interface Pkg {
@@ -21,24 +21,22 @@ interface Props {
   onClose: () => void;
 }
 
-type Screen = "form" | "processing" | "success";
+type Screen = "form" | "redirecting" | "paypal-login" | "processing" | "success";
 
-function formatCardNumber(val: string) {
-  return val
-    .replace(/\D/g, "")
-    .substring(0, 16)
-    .replace(/(.{4})/g, "$1 ")
-    .trim();
-}
-
-function formatExpiry(val: string) {
-  const digits = val.replace(/\D/g, "").substring(0, 4);
-  if (digits.length >= 3) return digits.substring(0, 2) + " / " + digits.substring(2);
-  return digits;
-}
-
-function formatCVC(val: string) {
-  return val.replace(/\D/g, "").substring(0, 3);
+// PayPal wordmark SVG (inline, brand-accurate colors)
+function PayPalWordmark({ className = "" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 100 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* PP icon */}
+      <path d="M8 4h4.5c2.5 0 4 1.2 3.8 3.5C16 10 14.2 12 11.5 12H9.5L8.8 16H6L8 4z" fill="#003087"/>
+      <path d="M9.5 10.5h1.8c1.2 0 2-.6 2.1-1.8C13.5 7.5 12.8 7 11.5 7H9.8L9.5 10.5z" fill="#003087"/>
+      <path d="M14 6h4.5c2.5 0 4 1.2 3.8 3.5C22 12 20.2 14 17.5 14H15.5L14.8 18H12L14 6z" fill="#009cde"/>
+      <path d="M15.5 12.5h1.8c1.2 0 2-.6 2.1-1.8C19.5 9.5 18.8 9 17.5 9H15.8L15.5 12.5z" fill="#009cde"/>
+      {/* "PayPal" text */}
+      <text x="26" y="16" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="11" fill="#003087">Pay</text>
+      <text x="46" y="16" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="11" fill="#009cde">Pal</text>
+    </svg>
+  );
 }
 
 export function CheckoutModal({ pkg, onClose }: Props) {
@@ -47,9 +45,8 @@ export function CheckoutModal({ pkg, onClose }: Props) {
   const [screen, setScreen] = useState<Screen>("form");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [cardNumber, setCardNumber] = useState("");
-  const [expiry, setExpiry] = useState("");
-  const [cvc, setCvc] = useState("");
+  const [mockEmail, setMockEmail] = useState("");
+  const [mockPassword, setMockPassword] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -58,23 +55,26 @@ export function CheckoutModal({ pkg, onClose }: Props) {
     const e: Record<string, string> = {};
     if (!name.trim()) e.name = "Required";
     if (!email.trim() || !email.includes("@")) e.email = "Valid email required";
-    if (cardNumber.replace(/\s/g, "").length < 16) e.card = "Enter a 16-digit card number";
-    if (expiry.replace(/\s/g, "").replace("/", "").length < 4) e.expiry = "Enter MM / YY";
-    if (cvc.length < 3) e.cvc = "Enter 3 digits";
     return e;
   };
 
-  const handlePay = () => {
+  const startPayPalFlow = () => {
     const e = validate();
     if (Object.keys(e).length) { setErrors(e); return; }
     setErrors({});
+    setScreen("redirecting");
+    // Simulate redirect delay → show mock PayPal login
+    setTimeout(() => setScreen("paypal-login"), 1300);
+  };
+
+  const handlePayPalLogin = () => {
     setScreen("processing");
-    // Simulate network delay — no real charge occurs
-    setTimeout(() => setScreen("success"), 1800);
+    // Simulate PayPal processing
+    setTimeout(() => setScreen("success"), 1600);
   };
 
   const handleOverlayClick = (e: React.MouseEvent) => {
-    if (e.target === overlayRef.current && screen !== "processing") onClose();
+    if (e.target === overlayRef.current && screen === "form") onClose();
   };
 
   return (
@@ -85,10 +85,67 @@ export function CheckoutModal({ pkg, onClose }: Props) {
     >
       <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[95vh]">
 
+        {/* — — — REDIRECTING SCREEN — — — */}
+        {screen === "redirecting" && (
+          <div className="flex flex-col items-center justify-center py-24 px-8 gap-6">
+            <PayPalWordmark className="h-8 w-auto" />
+            <Loader2 className="w-10 h-10 text-[#009cde] animate-spin" />
+            <p className="text-gray-600 font-body text-base text-center">
+              {t('checkout.redirecting')}
+            </p>
+          </div>
+        )}
+
+        {/* — — — MOCK PAYPAL LOGIN SCREEN — — — */}
+        {screen === "paypal-login" && (
+          <div className="flex flex-col items-center py-10 px-8 gap-5">
+            <PayPalWordmark className="h-9 w-auto mb-1" />
+            <h2 className="font-heading font-bold text-lg text-gray-800 text-center">
+              {t('checkout.paypalLoginTitle')}
+            </h2>
+            <div className="w-full space-y-3">
+              <div>
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">
+                  {t('checkout.paypalEmailLabel')}
+                </label>
+                <input
+                  type="email"
+                  value={mockEmail}
+                  onChange={e => setMockEmail(e.target.value)}
+                  placeholder="example@email.com"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm outline-none focus:border-[#009cde] transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">
+                  {t('checkout.paypalPasswordLabel')}
+                </label>
+                <input
+                  type="password"
+                  value={mockPassword}
+                  onChange={e => setMockPassword(e.target.value)}
+                  placeholder="••••••••"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm outline-none focus:border-[#009cde] transition-colors"
+                />
+              </div>
+            </div>
+            <button
+              onClick={handlePayPalLogin}
+              className="w-full py-3.5 rounded-full font-heading font-black text-sm tracking-wide transition-colors"
+              style={{ backgroundColor: "#FFC439", color: "#003087" }}
+            >
+              {t('checkout.paypalLoginBtn')}
+            </button>
+            <p className="text-xs text-gray-400 text-center">
+              {t('checkout.securePaypal')}
+            </p>
+          </div>
+        )}
+
         {/* — — — PROCESSING SCREEN — — — */}
         {screen === "processing" && (
           <div className="flex flex-col items-center justify-center py-24 px-8 gap-5">
-            <Loader2 className="w-12 h-12 text-accent animate-spin" />
+            <Loader2 className="w-12 h-12 text-[#009cde] animate-spin" />
             <p className="text-primary font-heading font-bold text-lg text-center">
               {t('checkout.processing')}
             </p>
@@ -181,7 +238,7 @@ export function CheckoutModal({ pkg, onClose }: Props) {
                     value={name}
                     onChange={e => setName(e.target.value)}
                     placeholder={t('checkout.fullNamePlaceholder')}
-                    className={`w-full px-4 py-3 rounded-lg border text-sm outline-none transition-colors focus:border-accent ${errors.name ? 'border-red-400' : 'border-gray-200 focus:border-accent'}`}
+                    className={`w-full px-4 py-3 rounded-lg border text-sm outline-none transition-colors ${errors.name ? 'border-red-400' : 'border-gray-200 focus:border-[#009cde]'}`}
                   />
                   {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
                 </div>
@@ -195,85 +252,44 @@ export function CheckoutModal({ pkg, onClose }: Props) {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     placeholder={t('checkout.emailPlaceholder')}
-                    className={`w-full px-4 py-3 rounded-lg border text-sm outline-none transition-colors ${errors.email ? 'border-red-400' : 'border-gray-200 focus:border-accent'}`}
+                    className={`w-full px-4 py-3 rounded-lg border text-sm outline-none transition-colors ${errors.email ? 'border-red-400' : 'border-gray-200 focus:border-[#009cde]'}`}
                   />
                   {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                 </div>
               </div>
 
-              {/* Card Details */}
+              {/* PayPal Button */}
               <div className="space-y-3">
-                <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Card Details</p>
+                <button
+                  onClick={startPayPalFlow}
+                  className="w-full py-4 rounded-full font-heading font-black text-base tracking-wide transition-opacity hover:opacity-90 flex items-center justify-center gap-2 shadow-md"
+                  style={{ backgroundColor: "#FFC439" }}
+                >
+                  <PayPalWordmark className="h-6 w-auto" />
+                </button>
 
-                <div>
-                  <label className="block text-xs text-gray-400 mb-1">{t('checkout.cardNumber')}</label>
-                  <div className={`flex items-center gap-3 px-4 py-3 rounded-lg border transition-colors ${errors.card ? 'border-red-400' : 'border-gray-200 focus-within:border-accent'}`}>
-                    {/* Card icon */}
-                    <svg className="w-8 h-5 flex-shrink-0 opacity-60" viewBox="0 0 32 20" fill="none">
-                      <rect width="32" height="20" rx="3" fill="#1A1F71"/>
-                      <rect y="5" width="32" height="5" fill="#F7B600"/>
-                    </svg>
-                    <input
-                      type="text"
-                      inputMode="numeric"
-                      value={cardNumber}
-                      onChange={e => setCardNumber(formatCardNumber(e.target.value))}
-                      placeholder={t('checkout.cardNumberPlaceholder')}
-                      className="flex-1 outline-none text-sm bg-transparent"
-                    />
-                  </div>
-                  {errors.card && <p className="text-red-500 text-xs mt-1">{errors.card}</p>}
+                {/* Divider */}
+                <div className="flex items-center gap-3">
+                  <div className="flex-1 h-px bg-gray-200" />
+                  <span className="text-xs text-gray-400 uppercase tracking-wider">or</span>
+                  <div className="flex-1 h-px bg-gray-200" />
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <label className="block text-xs text-gray-400 mb-1">{t('checkout.expiry')}</label>
-                    <input
-                      type="text"
-                      inputMode="numeric"
-                      value={expiry}
-                      onChange={e => setExpiry(formatExpiry(e.target.value))}
-                      placeholder={t('checkout.expiryPlaceholder')}
-                      className={`w-full px-4 py-3 rounded-lg border text-sm outline-none transition-colors ${errors.expiry ? 'border-red-400' : 'border-gray-200 focus:border-accent'}`}
-                    />
-                    {errors.expiry && <p className="text-red-500 text-xs mt-1">{errors.expiry}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-xs text-gray-400 mb-1">{t('checkout.cvc')}</label>
-                    <input
-                      type="text"
-                      inputMode="numeric"
-                      value={cvc}
-                      onChange={e => setCvc(formatCVC(e.target.value))}
-                      placeholder={t('checkout.cvcPlaceholder')}
-                      className={`w-full px-4 py-3 rounded-lg border text-sm outline-none transition-colors ${errors.cvc ? 'border-red-400' : 'border-gray-200 focus:border-accent'}`}
-                    />
-                    {errors.cvc && <p className="text-red-500 text-xs mt-1">{errors.cvc}</p>}
-                  </div>
-                </div>
+                {/* Pay with Card secondary button */}
+                <button
+                  onClick={startPayPalFlow}
+                  className="w-full py-3.5 rounded-full border-2 border-gray-300 text-gray-600 font-heading font-bold text-sm hover:border-gray-400 hover:text-gray-800 transition-colors"
+                >
+                  {t('checkout.payWithCard')}
+                </button>
               </div>
 
-              {/* Pay Button */}
-              <button
-                onClick={handlePay}
-                className="w-full py-4 rounded-xl bg-accent text-white font-heading font-black text-sm uppercase tracking-widest hover:bg-accent/90 transition-colors flex items-center justify-center gap-2 shadow-lg"
-              >
-                <Lock className="w-4 h-4" />
-                {t('checkout.payBtn')} {pkg.price} USD
-              </button>
-
-              {/* Stripe Badge */}
+              {/* PayPal Trust Badge */}
               <div className="flex items-center justify-center gap-2 text-gray-400 text-xs pb-2">
-                {/* Stripe wordmark SVG */}
-                <svg className="h-4 opacity-60" viewBox="0 0 60 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5.45 9.87C5.45 8.73 6.37 8.28 7.85 8.28C9.99 8.28 12.68 8.94 14.82 10.1V4.65C12.5 3.74 10.2 3.37 7.85 3.37C3.13 3.37 0 5.88 0 10.16C0 16.9 9.3 15.84 9.3 18.74C9.3 20.08 8.17 20.53 6.6 20.53C4.27 20.53 1.29 19.58 -0.99 18.24V23.75C1.52 24.8 4.07 25.25 6.6 25.25C11.43 25.25 14.75 22.81 14.75 18.48C14.73 11.21 5.45 12.47 5.45 9.87Z" fill="#635BFF"/>
-                  <path d="M31.91 3.85L31.31 6.65C29.97 6.05 28.42 5.73 26.98 5.73C25.15 5.73 24.18 6.38 24.18 7.38C24.18 10.03 32.5 9.05 32.5 15.68C32.5 19.98 29.14 22.03 24.83 22.03C22.62 22.03 20.52 21.58 18.59 20.7L19.19 17.76C21.16 18.82 23.27 19.38 25.25 19.38C27.28 19.38 28.37 18.66 28.37 17.5C28.37 14.61 20.05 15.77 20.05 9.27C20.05 5.3 23.2 3.07 27.53 3.07C29.23 3.07 30.79 3.37 31.91 3.85Z" fill="#635BFF"/>
-                  <path d="M34.06 3.44H38.67L39.35 0H43.93L43.25 3.44H47.68L46.94 7.04H42.51L41.19 13.74C40.95 14.95 41.37 15.54 42.47 15.54C43.17 15.54 43.97 15.34 44.72 14.97L43.93 18.56C42.87 19.05 41.61 19.3 40.22 19.3C37.38 19.3 35.93 17.86 36.41 15.18L37.84 7.04H34.82L34.06 3.44Z" fill="#635BFF"/>
-                  <path d="M48.12 3.44H52.54L49.14 19.1H44.72L48.12 3.44ZM50.06 0C48.54 0 47.36 1.07 47.36 2.47C47.36 3.86 48.54 4.93 50.06 4.93C51.59 4.93 52.77 3.86 52.77 2.47C52.77 1.07 51.59 0 50.06 0Z" fill="#635BFF"/>
-                  <path d="M60 3.44L59.17 7.44C58.49 7.04 57.67 6.82 56.79 6.82C55.26 6.82 53.92 7.72 53.37 9.05L51.45 19.1H47.03L50.43 3.44H54.61L54.09 5.8C55 4.25 56.48 3.26 58.22 3.26C58.84 3.26 59.46 3.35 60 3.44Z" fill="#635BFF"/>
-                </svg>
-                <span>{t('checkout.stripeNote')}</span>
+                <PayPalWordmark className="h-4 w-auto opacity-60" />
+                <span>{t('checkout.securePaypal')}</span>
               </div>
+
             </div>
           </>
         )}
