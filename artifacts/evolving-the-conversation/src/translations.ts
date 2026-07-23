@@ -204,10 +204,90 @@ export const translations = {
     blogs: {
       title: "BLOG",
       readMore: "Read More",
+      backToBlogs: "← Back to Blogs",
+      postNotFound: "Post not found.",
+      postNotFoundBack: "Back to Blog",
+      ctaTitle: "Ready to Start Speaking With Confidence?",
+      ctaBtn: "Schedule a Session",
       posts: [
-        { title: "Speaking Up in Meetings", excerpt: "How to stop hesitating and start contributing effectively." },
-        { title: "Structuring Clear Emails", excerpt: "Simple formats for professional correspondence." },
-        { title: "Handling Q&A Confidently", excerpt: "Strategies for thinking on your feet in English." }
+        {
+          slug: "speaking-up-in-meetings",
+          image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1200&fit=crop",
+          title: "Speaking Up in Meetings",
+          excerpt: "How to stop hesitating and start contributing effectively.",
+          date: "June 10, 2026",
+          body: [
+            "Staying quiet in a meeting rarely has anything to do with a lack of ideas. More often, it's the fear of saying something the wrong way, or losing the flow of the conversation while translating in your head.",
+            "The fastest way to change this is to prepare a small set of go-to phrases before the meeting even starts — simple, functional language for jumping in, agreeing, disagreeing politely, or asking for clarification.",
+            "Phrases like 'Can I add something here?' or 'Sorry, could you clarify that point?' do more work than perfect grammar. They give you a natural entry point into the conversation, and they signal confidence even when your English isn't flawless.",
+            "Confidence in meetings is built one contribution at a time. The goal isn't to sound perfect — it's to participate consistently enough that speaking up stops feeling like a risk and starts feeling normal."
+          ]
+        },
+        {
+          slug: "structuring-clear-emails",
+          image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&fit=crop",
+          title: "Structuring Clear Emails",
+          excerpt: "Simple formats for professional correspondence.",
+          date: "June 24, 2026",
+          body: [
+            "A professional email doesn't need to be long to be effective — it needs to be structured. Most work emails follow a simple pattern: context, request, and next step.",
+            "Start with one short line that states why you're writing. Avoid long introductions; get to the purpose in the first sentence.",
+            "In the middle, be specific about what you need and by when. Vague requests create back-and-forth; clear requests get faster replies.",
+            "Close with a simple, polite line and a clear next step, like 'Let me know if this works' or 'I'll follow up on Thursday.' Over time, this structure becomes automatic, and writing in English starts to feel far less stressful."
+          ]
+        },
+        {
+          slug: "small-talk-that-doesnt-feel-forced",
+          image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&fit=crop",
+          title: "Small Talk That Doesn't Feel Forced",
+          excerpt: "Natural ways to connect with colleagues before getting to business.",
+          date: "July 3, 2026",
+          body: [
+            "Small talk in English can feel harder than the actual work conversation that follows it — mostly because it feels less predictable.",
+            "The trick is to keep a small mental list of safe, easy topics: the weekend, the weather, a shared project, or something light about the day so far.",
+            "You don't need clever or original lines. Simple, genuine questions like 'How was your weekend?' or 'Busy day?' are enough to open the conversation naturally.",
+            "Small talk is a warm-up, not a test. The goal is connection, not performance — and the more you practice it casually, the less intimidating it becomes."
+          ]
+        },
+        {
+          slug: "preparing-a-presentation-in-english",
+          image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&fit=crop",
+          title: "Preparing a Presentation in English",
+          excerpt: "A simple framework to organize your ideas and speak with confidence.",
+          date: "July 8, 2026",
+          body: [
+            "A clear presentation doesn't require advanced vocabulary — it requires a clear structure the audience can follow.",
+            "A simple, reliable framework is: what the topic is, why it matters, what the data or facts show, and what should happen next.",
+            "Rehearse your opening line and your closing line out loud. Those two moments carry the most weight, and having them ready removes most of the pressure.",
+            "It's normal to lose a word mid-sentence. Pausing, rephrasing, or simplifying an idea on the spot is a sign of fluency, not failure."
+          ]
+        },
+        {
+          slug: "phrases-for-asking-clarification",
+          image: "https://images.unsplash.com/photo-1573496799515-eebbb63814f2?w=1200&fit=crop",
+          title: "Phrases for Asking for Clarification",
+          excerpt: "Useful expressions to ask for repetition or clarification without losing confidence.",
+          date: "July 14, 2026",
+          body: [
+            "Asking someone to repeat or clarify something is one of the most useful — and most underused — skills in professional English.",
+            "Instead of nodding along when you're unsure, try: 'Could you say that again, please?' or 'Just to confirm, do you mean...?'",
+            "These phrases don't make you look less capable. They show you're actively engaged and want to get the details right.",
+            "The professionals who ask clarifying questions are often the ones who understand the most — because they aren't afraid to check."
+          ]
+        },
+        {
+          slug: "managing-nerves-in-english",
+          image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&fit=crop",
+          title: "From Freezing to Fluent: Managing Nerves in English",
+          excerpt: "Practical techniques to calm your mind before you speak.",
+          date: "July 21, 2026",
+          body: [
+            "The 'freeze' moment — when your mind goes blank right when you need to speak — is one of the most common challenges professionals face in English.",
+            "It usually happens because the brain is trying to translate and speak at the same time. Slowing down, even for two seconds, breaks that cycle.",
+            "A simple technique: pause, take one breath, and say a short bridging phrase like 'Let me think about that for a second' while you organize your thought.",
+            "With repeated practice, this pause gets shorter and shorter — until speaking starts to feel automatic instead of effortful."
+          ]
+        }
       ]
     },
     faqShared: [
@@ -495,10 +575,90 @@ export const translations = {
     blogs: {
       title: "BLOG",
       readMore: "Leer Más",
+      backToBlogs: "← Volver al Blog",
+      postNotFound: "Publicación no encontrada.",
+      postNotFoundBack: "Volver al Blog",
+      ctaTitle: "¿Listo Para Hablar con Confianza?",
+      ctaBtn: "Agendar una Sesión",
       posts: [
-        { title: "Hablar en Reuniones", excerpt: "Cómo dejar de dudar y empezar a contribuir eficazmente." },
-        { title: "Estructurando Correos Claros", excerpt: "Formatos simples para correspondencia profesional." },
-        { title: "Manejando Preguntas y Respuestas con Confianza", excerpt: "Estrategias para pensar rápido en inglés." }
+        {
+          slug: "speaking-up-in-meetings",
+          image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1200&fit=crop",
+          title: "Hablar en las Reuniones",
+          excerpt: "Cómo dejar de dudar y empezar a contribuir de forma efectiva.",
+          date: "10 de junio de 2026",
+          body: [
+            "Quedarse en silencio en una reunión rara vez tiene que ver con falta de ideas. Más frecuentemente, es el miedo a decir algo de la manera equivocada, o perder el hilo de la conversación mientras se traduce mentalmente.",
+            "La forma más rápida de cambiar esto es preparar un conjunto de frases de apoyo antes de que empiece la reunión — lenguaje simple y funcional para intervenir, estar de acuerdo, estar en desacuerdo con cortesía o pedir una aclaración.",
+            "Frases como '¿Puedo agregar algo aquí?' o '¿Podría aclarar ese punto?' hacen más trabajo que la gramática perfecta. Te dan un punto de entrada natural a la conversación, y transmiten confianza incluso cuando tu inglés no es impecable.",
+            "La confianza en las reuniones se construye una contribución a la vez. El objetivo no es sonar perfecto — es participar con suficiente consistencia para que hablar deje de sentirse como un riesgo y empiece a sentirse normal."
+          ]
+        },
+        {
+          slug: "structuring-clear-emails",
+          image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&fit=crop",
+          title: "Cómo Estructurar Correos Claros",
+          excerpt: "Formatos simples para la correspondencia profesional.",
+          date: "24 de junio de 2026",
+          body: [
+            "Un correo profesional no tiene que ser largo para ser efectivo — tiene que estar estructurado. La mayoría de los correos de trabajo siguen un patrón simple: contexto, solicitud y próximo paso.",
+            "Empieza con una línea corta que explique por qué escribes. Evita introducciones largas; ve al propósito en la primera oración.",
+            "En el cuerpo del mensaje, sé específico sobre lo que necesitas y cuándo. Las solicitudes vagas generan más intercambios; las solicitudes claras obtienen respuestas más rápidas.",
+            "Cierra con una línea simple y cortés y un próximo paso claro, como 'Avísame si esto funciona' o 'Hago seguimiento el jueves.' Con el tiempo, esta estructura se vuelve automática, y escribir en inglés empieza a sentirse mucho menos estresante."
+          ]
+        },
+        {
+          slug: "small-talk-that-doesnt-feel-forced",
+          image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&fit=crop",
+          title: "Small Talk Sin Que Se Sienta Forzado",
+          excerpt: "Formas naturales de conectar con colegas antes de hablar de trabajo.",
+          date: "3 de julio de 2026",
+          body: [
+            "La pequeña conversación en inglés puede sentirse más difícil que la conversación de trabajo que le sigue — principalmente porque parece menos predecible.",
+            "El truco está en tener una pequeña lista mental de temas seguros y fáciles: el fin de semana, el clima, un proyecto compartido o algo ligero sobre el día hasta el momento.",
+            "No necesitas líneas ingeniosas u originales. Preguntas simples y genuinas como '¿Cómo estuvo tu fin de semana?' o '¿Día ocupado?' son suficientes para abrir la conversación de manera natural.",
+            "La pequeña conversación es un calentamiento, no una prueba. El objetivo es la conexión, no el rendimiento — y cuanto más la practiques de manera casual, menos intimidante se vuelve."
+          ]
+        },
+        {
+          slug: "preparing-a-presentation-in-english",
+          image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&fit=crop",
+          title: "Cómo Preparar una Presentación en Inglés",
+          excerpt: "Un método simple para organizar tus ideas y hablar con confianza.",
+          date: "8 de julio de 2026",
+          body: [
+            "Una presentación clara no requiere vocabulario avanzado — requiere una estructura clara que el público pueda seguir.",
+            "Un esquema simple y confiable es: de qué trata el tema, por qué es importante, qué muestran los datos o los hechos, y qué debería suceder a continuación.",
+            "Ensaya tu línea de apertura y tu línea de cierre en voz alta. Esos dos momentos tienen el mayor peso, y tenerlos listos elimina la mayor parte de la presión.",
+            "Es normal perder una palabra a mitad de la oración. Hacer una pausa, reformular o simplificar una idea en el momento es señal de fluidez, no de fracaso."
+          ]
+        },
+        {
+          slug: "phrases-for-asking-clarification",
+          image: "https://images.unsplash.com/photo-1573496799515-eebbb63814f2?w=1200&fit=crop",
+          title: "Frases para Pedir Aclaraciones",
+          excerpt: "Expresiones útiles para pedir que repitan o aclaren algo sin perder confianza.",
+          date: "14 de julio de 2026",
+          body: [
+            "Pedir a alguien que repita o aclare algo es una de las habilidades más útiles — y menos utilizadas — del inglés profesional.",
+            "En lugar de asentir cuando no estás seguro, intenta: '¿Podría repetir eso, por favor?' o '¿Solo para confirmar, te refieres a...?'",
+            "Estas frases no te hacen ver menos capaz. Muestran que estás activamente comprometido y que quieres entender bien los detalles.",
+            "Los profesionales que hacen preguntas de aclaración suelen ser quienes más comprenden — porque no tienen miedo de verificar."
+          ]
+        },
+        {
+          slug: "managing-nerves-in-english",
+          image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&fit=crop",
+          title: "De Bloquearte a Fluir: Manejar los Nervios en Inglés",
+          excerpt: "Técnicas prácticas para calmar la mente antes de hablar.",
+          date: "21 de julio de 2026",
+          body: [
+            "El momento de 'bloqueo' — cuando tu mente se queda en blanco justo cuando necesitas hablar — es uno de los desafíos más comunes que enfrentan los profesionales en inglés.",
+            "Generalmente ocurre porque el cerebro intenta traducir y hablar al mismo tiempo. Desacelerar, incluso por dos segundos, rompe ese ciclo.",
+            "Una técnica simple: haz una pausa, toma una respiración y di una frase puente corta como 'Déjame pensar en eso un segundo' mientras organizas tu pensamiento.",
+            "Con práctica repetida, esta pausa se hace cada vez más corta — hasta que hablar empieza a sentirse automático en lugar de difícil."
+          ]
+        }
       ]
     },
     faqShared: [
