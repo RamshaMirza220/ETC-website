@@ -14,9 +14,9 @@ export const translations = {
     },
     footer: {
       tagline: "EVOLVING THE CONVERSATION",
-      phone: "+1 (555) 123-4567",
+      phone: "+507 6207-0905",
       email: "hello@evolvingtheconversation.com",
-      address: "123 Business Avenue, Suite 100",
+      address: "4517 Washington Ave. Manchester, Kentucky 39495",
       companyLinks: "Company",
       helpLinks: "Help",
       support: "Customer Support",
@@ -305,9 +305,9 @@ export const translations = {
     },
     footer: {
       tagline: "EVOLVING THE CONVERSATION",
-      phone: "+1 (555) 123-4567",
+      phone: "+507 6207-0905",
       email: "hello@evolvingtheconversation.com",
-      address: "123 Business Avenue, Suite 100",
+      address: "4517 Washington Ave. Manchester, Kentucky 39495",
       companyLinks: "Compañía",
       helpLinks: "Ayuda",
       support: "Soporte al Cliente",

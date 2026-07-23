@@ -38,15 +38,15 @@ export function Footer() {
             
             <div className="flex flex-col gap-3 text-sm text-gray-300">
               <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-accent" />
-                <span>{t('footer.phone')}</span>
+                <Phone className="w-4 h-4 text-accent flex-shrink-0" />
+                <a href="tel:+50762070905" className="hover:text-accent transition-colors">{t('footer.phone')}</a>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-accent" />
-                <span>{t('footer.email')}</span>
+                <Mail className="w-4 h-4 text-accent flex-shrink-0" />
+                <a href="mailto:hello@evolvingtheconversation.com" className="hover:text-accent transition-colors break-all">{t('footer.email')}</a>
               </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="w-4 h-4 text-accent" />
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
                 <span>{t('footer.address')}</span>
               </div>
             </div>
