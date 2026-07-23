@@ -69,7 +69,7 @@ export function Footer() {
             <div className="flex flex-col gap-3 text-sm text-gray-300">
               <a href="#" className="hover:text-accent transition-colors">{t('footer.support')}</a>
               <a href="#" className="hover:text-accent transition-colors">{t('footer.terms')}</a>
-              <Link href="/privacy-policy" className="hover:text-accent transition-colors">{t('footer.privacy')}</Link>
+              <span className="cursor-default">{t('footer.privacy')}</span>
             </div>
           </div>
 

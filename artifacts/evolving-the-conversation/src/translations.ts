@@ -320,11 +320,11 @@ export const translations = {
       packages: [
         {
           name: "Package #1",
-          freq: "3 online individual classes per week",
-          price: "$600.00",
-          priceNum: 600,
-          subtotal: "$560.75",
-          itbms: "$39.25"
+          freq: "1 online individual class per week",
+          price: "$240.00",
+          priceNum: 240,
+          subtotal: "$224.30",
+          itbms: "$15.70"
         },
         {
           name: "Package #2",
@@ -336,11 +336,11 @@ export const translations = {
         },
         {
           name: "Package #3",
-          freq: "1 online individual class per week",
-          price: "$240.00",
-          priceNum: 240,
-          subtotal: "$224.30",
-          itbms: "$15.70"
+          freq: "3 online individual classes per week",
+          price: "$600.00",
+          priceNum: 600,
+          subtotal: "$560.75",
+          itbms: "$39.25"
         }
       ]
     },
@@ -368,17 +368,6 @@ export const translations = {
       participant: "1 participant",
       close: "Close"
     },
-    privacy: {
-      title: "Privacy Policy",
-      disclaimerHeading: "A legal disclaimer",
-      disclaimerBody: "The explanations and information provided on this page are only general and high-level explanations and information on how to write your own document of a Privacy Policy. You should not rely on this article as legal advice or as recommendations regarding what you should actually do, because we cannot know in advance what are the specific privacy policies you wish to establish between your business and your customers and visitors. We recommend that you seek legal advice to help you understand and to assist you in the creation of your own Privacy Policy.",
-      basicsHeading: "Privacy Policy - the basics",
-      basicsP1: "Having said that, a privacy policy is a statement that discloses some or all of the ways a website collects, uses, discloses, processes, and manages the data of its visitors and customers. It usually also includes a statement regarding the website's commitment to protecting its visitors' or customers' privacy, and an explanation about the different mechanisms the website is implementing in order to protect privacy.",
-      basicsP2: "Different jurisdictions have different legal obligations of what must be included in a Privacy Policy. You are responsible to make sure you are following the relevant legislation to your activities and location.",
-      includesHeading: "What to include in the Privacy Policy",
-      includesP1: "Generally speaking, a Privacy Policy often addresses these types of issues: the types of information the website is collecting and the manner in which it collects the data; an explanation about why is the website collecting these types of information; what are the website's practices on sharing the information with third parties; ways in which your visitors and customers can exercise their rights according to the relevant privacy legislation; the specific practices regarding minors' data collection; and much, much more.",
-      includesP2: "This document is a placeholder and should be reviewed and finalized with a legal professional before the site goes live, to make sure it reflects Evolving the Conversation's actual data practices (e.g., Firebase/Firestore usage, contact form submissions, cookies, and any analytics tools in use)."
-    }
   },
   es: {
     nav: {
@@ -694,11 +683,11 @@ export const translations = {
       packages: [
         {
           name: "Paquete #1",
-          freq: "3 clases individuales en línea por semana",
-          price: "$600.00",
-          priceNum: 600,
-          subtotal: "$560.75",
-          itbms: "$39.25"
+          freq: "1 clase individual en línea por semana",
+          price: "$240.00",
+          priceNum: 240,
+          subtotal: "$224.30",
+          itbms: "$15.70"
         },
         {
           name: "Paquete #2",
@@ -710,11 +699,11 @@ export const translations = {
         },
         {
           name: "Paquete #3",
-          freq: "1 clase individual en línea por semana",
-          price: "$240.00",
-          priceNum: 240,
-          subtotal: "$224.30",
-          itbms: "$15.70"
+          freq: "3 clases individuales en línea por semana",
+          price: "$600.00",
+          priceNum: 600,
+          subtotal: "$560.75",
+          itbms: "$39.25"
         }
       ]
     },
@@ -749,16 +738,5 @@ export const translations = {
       { q: "¿Necesitas un inglés perfecto para empezar?", a: "No. El objetivo no es la perfección. El objetivo es el progreso, la participación y la confianza." },
       { q: "¿Cómo sé qué programa es adecuado para mí?", a: "El mejor primer paso es programar una conversación. Hablaremos sobre tu nivel, objetivos, horario y las situaciones donde más necesitas el inglés, y luego te recomendaremos la mejor opción." }
     ],
-    privacy: {
-      title: "Política de Privacidad",
-      disclaimerHeading: "Aviso Legal",
-      disclaimerBody: "Las explicaciones e información proporcionadas en esta página son solo explicaciones e información generales y de alto nivel sobre cómo redactar tu propio documento de Política de Privacidad. No debes basarte en este artículo como asesoramiento legal ni como recomendaciones sobre lo que debes hacer, ya que no podemos conocer de antemano cuáles son las políticas de privacidad específicas que deseas establecer entre tu negocio y tus clientes y visitantes. Te recomendamos que busques asesoramiento legal para ayudarte a comprender y asistirte en la creación de tu propia Política de Privacidad.",
-      basicsHeading: "Política de Privacidad - lo básico",
-      basicsP1: "Dicho esto, una política de privacidad es una declaración que revela algunas o todas las formas en que un sitio web recopila, usa, divulga, procesa y gestiona los datos de sus visitantes y clientes. Por lo general, también incluye una declaración sobre el compromiso del sitio web de proteger la privacidad de sus visitantes o clientes, y una explicación sobre los diferentes mecanismos que el sitio web implementa para proteger la privacidad.",
-      basicsP2: "Diferentes jurisdicciones tienen diferentes obligaciones legales sobre lo que debe incluirse en una Política de Privacidad. Eres responsable de asegurarte de seguir la legislación relevante para tus actividades y ubicación.",
-      includesHeading: "Qué incluir en la Política de Privacidad",
-      includesP1: "En términos generales, una Política de Privacidad a menudo aborda estos tipos de cuestiones: los tipos de información que recopila el sitio web y la manera en que recopila los datos; una explicación sobre por qué el sitio web recopila estos tipos de información; cuáles son las prácticas del sitio web sobre compartir la información con terceros; formas en que tus visitantes y clientes pueden ejercer sus derechos de acuerdo con la legislación de privacidad relevante; las prácticas específicas sobre la recopilación de datos de menores; y mucho más.",
-      includesP2: "Este documento es un marcador de posición y debe ser revisado y finalizado con un profesional legal antes de que el sitio entre en funcionamiento, para asegurarse de que refleje las prácticas reales de datos de Evolving the Conversation (por ejemplo, el uso de Firebase/Firestore, envíos de formularios de contacto, cookies y cualquier herramienta de análisis en uso)."
-    }
   }
 };

@@ -47,7 +47,7 @@ export function Pricing() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             {packages.map((pkg, i) => {
-              const isPopular = i === 0;
+              const isPopular = i === 2;
               return (
                 <div
                   key={i}

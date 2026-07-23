@@ -15,7 +15,6 @@ import { Events } from '@/pages/Events';
 import { Blogs } from '@/pages/Blogs';
 import { BlogPost } from '@/pages/BlogPost';
 import { Pricing } from '@/pages/Pricing';
-import { PrivacyPolicy } from '@/pages/PrivacyPolicy';
 import NotFound from '@/pages/not-found';
 
 const queryClient = new QueryClient();
@@ -32,7 +31,6 @@ function Router() {
       <Route path="/blogs" component={Blogs} />
       <Route path="/blogs/:slug" component={BlogPost} />
       <Route path="/pricing" component={Pricing} />
-      <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route component={NotFound} />
     </Switch>
   );

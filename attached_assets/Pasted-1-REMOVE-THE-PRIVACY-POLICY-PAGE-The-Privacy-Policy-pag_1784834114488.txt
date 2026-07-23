@@ -1,0 +1,32 @@
+1. REMOVE THE PRIVACY POLICY PAGE
+
+The Privacy Policy page was a placeholder and is no longer needed. Please:
+
+Delete the /privacy-policy route and its page component entirely.
+Remove the "Privacy Policy" placeholder legal content and its translation keys from translations.js (both en and es).
+In the Footer component, change "Privacy Policy" / "Política de Privacidad" back to plain, non-clickable text (no Link, no navigation) — it should just display as a label in the "Help" column like before, not link anywhere.
+Confirm there are no leftover broken imports or references to the removed page anywhere in the codebase after deletion.
+2. SWAP PACKAGE #1 AND PACKAGE #3 LABELS ON THE PRICING PAGE
+
+On the /pricing page, swap only the package number/title labels between the two cards — everything else about each card (price, class frequency, subtotal, ITBMS, "Most Popular" styling if applied) stays attached to its correct price content. Specifically:
+
+The card currently labeled "Package #1" (3 classes/week, $600.00 total) should now be labeled "Package #3" / "Paquete #3".
+The card currently labeled "Package #3" (1 class/week, $240.00 total) should now be labeled "Package #1" / "Paquete #1".
+Package #2 (2 classes/week, $440.00 total) stays exactly as it is — no change.
+
+After the swap, the three cards should read left-to-right (or however they're currently ordered) as:
+
+Package #1 → 1 class/week → $240.00 (subtotal $224.30, ITBMS $15.70)
+Package #2 → 2 classes/week → $440.00 (subtotal $411.21, ITBMS $28.79)
+Package #3 → 3 classes/week → $600.00 (subtotal $560.75, ITBMS $39.25)
+
+If a "Most Popular" / "Más Popular" badge was previously tied to the $600 card because it was "Package #1," keep that badge on the same $600 card (now correctly labeled "Package #3") — the badge follows the price/content, not the old label. Update this in both en and es sections of translations.js and in the checkout modal's order summary (make sure the correct new package number/title shows up there too when a user clicks "Buy Now" on any of the three cards).
+
+3. CHECKLIST
+ Visiting /privacy-policy no longer works (route removed) and the footer "Privacy Policy" text is now non-clickable, matching the style of surrounding footer text.
+ No console errors or broken imports from the removed page.
+ Pricing page shows Package #1 = $240, Package #2 = $440, Package #3 = $600, in both languages.
+ Checkout modal reflects the correct package number when opened from each card.
+ npm run dev builds with zero errors/warnings.
+
+Make these changes now
