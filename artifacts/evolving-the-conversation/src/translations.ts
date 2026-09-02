@@ -208,7 +208,7 @@ export const translations = {
       phoneLabel: "Phone",
       emailLabel: "Email",
       addressLabel: "Address",
-      responseNote: "Reach out using the contact details below and we will be happy to connect with you.",
+      responseNote: "Reach out using the contact details above and we will be happy to connect with you.",
       backHome: "BACK TO HOME"
     },
     blogs: {
@@ -588,7 +588,7 @@ export const translations = {
       phoneLabel: "Teléfono",
       emailLabel: "Correo electrónico",
       addressLabel: "Dirección",
-      responseNote: "Escríbenos usando los datos de contacto a continuación y estaremos encantados de conectar contigo.",
+      responseNote: "Escríbenos usando los datos de contacto anteriores y estaremos encantados de conectar contigo.",
       backHome: "VOLVER AL INICIO"
     },
     blogs: {
