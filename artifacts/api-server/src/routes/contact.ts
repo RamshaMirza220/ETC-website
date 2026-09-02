@@ -1,4 +1,5 @@
 import { Router, type IRouter } from "express";
+import nodemailer from "nodemailer";
 import { logger } from "../lib/logger";
 
 const router: IRouter = Router();
@@ -51,11 +52,23 @@ router.post("/contact", async (req, res) => {
     return;
   }
 
-  const apiKey = process.env["RESEND_API_KEY"]?.trim();
+  const smtpHost = process.env["SMTP_HOST"]?.trim();
+  const smtpPortValue = process.env["SMTP_PORT"]?.trim();
+  const smtpPort = Number(smtpPortValue);
+  const smtpUser = process.env["SMTP_USER"]?.trim();
+  const smtpPassword = process.env["SMTP_PASSWORD"]?.trim();
   const receiverEmail = process.env["CONTACT_RECEIVER_EMAIL"]?.trim();
-  const fromEmail = process.env["CONTACT_FROM_EMAIL"]?.trim();
 
-  if (!apiKey || !receiverEmail || !fromEmail) {
+  if (
+    !smtpHost ||
+    !smtpPortValue ||
+    !Number.isInteger(smtpPort) ||
+    smtpPort < 1 ||
+    smtpPort > 65535 ||
+    !smtpUser ||
+    !smtpPassword ||
+    !receiverEmail
+  ) {
     logger.error("Contact email service is missing required environment variables");
     res.status(503).json({
       error: "The contact form is temporarily unavailable.",
@@ -75,32 +88,24 @@ router.post("/contact", async (req, res) => {
   ].join("\n");
 
   try {
-    const resendResponse = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
+    const transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpPort === 465,
+      requireTLS: smtpPort === 587,
+      auth: {
+        user: smtpUser,
+        pass: smtpPassword,
       },
-      body: JSON.stringify({
-        from: fromEmail,
-        to: [receiverEmail],
-        reply_to: email,
-        subject,
-        text,
-      }),
     });
 
-    if (!resendResponse.ok) {
-      const providerResponse = await resendResponse.text();
-      logger.error(
-        { status: resendResponse.status, providerResponse: providerResponse.slice(0, 500) },
-        "Resend rejected contact email",
-      );
-      res.status(502).json({
-        error: "The contact form is temporarily unavailable.",
-      });
-      return;
-    }
+    await transporter.sendMail({
+      from: smtpUser,
+      to: receiverEmail,
+      replyTo: email,
+      subject,
+      text,
+    });
 
     res.status(200).json({ message: "Message sent successfully." });
   } catch (error) {
