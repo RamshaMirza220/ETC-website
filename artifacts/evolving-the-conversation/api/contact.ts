@@ -1,14 +1,5 @@
-import nodemailer from "nodemailer";
-import type { IncomingMessage, ServerResponse } from "node:http";
-
-interface VercelRequest extends IncomingMessage {
-  body?: unknown;
-}
-
-interface VercelResponse extends ServerResponse {
-  status: (statusCode: number) => VercelResponse;
-  json: (body: unknown) => VercelResponse;
-}
+import type { VercelRequest, VercelResponse } from "@vercel/node";
+import * as nodemailer from "nodemailer";
 
 const MAX_NAME_LENGTH = 120;
 const MAX_EMAIL_LENGTH = 320;
