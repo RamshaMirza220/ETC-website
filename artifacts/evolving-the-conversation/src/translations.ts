@@ -201,6 +201,16 @@ export const translations = {
       comingSoon: "Upcoming sessions coming soon.",
       btn: "SCHEDULE A SESSION"
     },
+    contact: {
+      eyebrow: "GET IN TOUCH",
+      title: "LET'S KEEP THE CONVERSATION GOING.",
+      intro: "Have a question about our programs or want to find the right next step? We would love to hear from you.",
+      phoneLabel: "Phone",
+      emailLabel: "Email",
+      addressLabel: "Address",
+      responseNote: "Reach out using the contact details below and we will be happy to connect with you.",
+      backHome: "BACK TO HOME"
+    },
     blogs: {
       title: "BLOG",
       readMore: "Read More",
@@ -570,6 +580,16 @@ export const translations = {
       title: "EVENTOS Y TALLERES",
       comingSoon: "Próximas sesiones muy pronto.",
       btn: "PROGRAMA UNA SESIÓN"
+    },
+    contact: {
+      eyebrow: "CONTÁCTANOS",
+      title: "SIGAMOS CONVERSANDO.",
+      intro: "¿Tienes preguntas sobre nuestros programas o quieres encontrar el siguiente paso adecuado? Nos encantará saber de ti.",
+      phoneLabel: "Teléfono",
+      emailLabel: "Correo electrónico",
+      addressLabel: "Dirección",
+      responseNote: "Escríbenos usando los datos de contacto a continuación y estaremos encantados de conectar contigo.",
+      backHome: "VOLVER AL INICIO"
     },
     blogs: {
       title: "BLOG",

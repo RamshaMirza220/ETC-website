@@ -10,12 +10,6 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const handleContactUs = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setMobileMenuOpen(false);
-    document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const navLinks = [
     { label: t('nav.home'), href: '/' },
     { label: t('nav.events'), href: '/events' },
@@ -81,9 +75,9 @@ export function Navbar() {
               {t('nav.blogs')}
             </Link>
 
-            <button onClick={handleContactUs} className="text-sm font-semibold text-gray-600 hover:text-primary transition-colors cursor-pointer">
+            <Link href="/contact" className={cn("text-sm font-semibold hover:text-primary transition-colors", location === '/contact' ? 'text-primary' : 'text-gray-600')}>
               {t('nav.contact')}
-            </button>
+            </Link>
             
             <div className="flex items-center gap-2 border-l pl-6 border-gray-200">
               <button 
@@ -130,7 +124,7 @@ export function Navbar() {
           <Link href="/about" className="font-semibold text-gray-800" onClick={() => setMobileMenuOpen(false)}>{t('nav.about')}</Link>
           <Link href="/pricing" className="font-semibold text-gray-800" onClick={() => setMobileMenuOpen(false)}>{t('nav.pricing')}</Link>
           <Link href="/blogs" className="font-semibold text-gray-800" onClick={() => setMobileMenuOpen(false)}>{t('nav.blogs')}</Link>
-          <button onClick={handleContactUs} className="font-semibold text-gray-800 text-left">{t('nav.contact')}</button>
+          <Link href="/contact" className="font-semibold text-gray-800" onClick={() => setMobileMenuOpen(false)}>{t('nav.contact')}</Link>
           
           <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
             <button 
