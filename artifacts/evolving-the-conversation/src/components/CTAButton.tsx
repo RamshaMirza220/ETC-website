@@ -47,6 +47,18 @@ export function CTAButton({ children, variant = "solid", href, className, onClic
         </a>
       );
     }
+    if (/^https?:\/\//i.test(href)) {
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(baseClasses, variants[variant], className)}
+        >
+          {children}
+        </a>
+      );
+    }
     return (
       <Link href={href} className="inline-block">
         {Component}

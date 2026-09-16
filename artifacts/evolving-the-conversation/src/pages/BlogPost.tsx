@@ -84,8 +84,9 @@ export function BlogPost() {
             {t('blogs.ctaTitle')}
           </h2>
           <a
-            href="#footer"
-            onClick={(e) => { e.preventDefault(); document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' }); }}
+            href="https://calendly.com/evolvingtheconversation2/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-10 py-4 border-2 border-white text-white font-heading font-black text-sm uppercase tracking-widest rounded-full hover:bg-white hover:text-primary transition-all duration-200"
           >
             {t('blogs.ctaBtn')}

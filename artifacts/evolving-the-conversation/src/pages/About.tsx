@@ -19,7 +19,7 @@ export function About() {
             <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-10">
               {t('about.hero.body')}
             </p>
-            <CTAButton href="#footer">{t('about.hero.btn')}</CTAButton>
+            <CTAButton href="https://calendly.com/evolvingtheconversation2/30min">{t('about.hero.btn')}</CTAButton>
           </div>
         </div>
       </section>

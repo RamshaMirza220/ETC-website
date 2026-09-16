@@ -19,7 +19,7 @@ export function Events() {
         <p className="text-2xl text-gray-500 font-medium mb-12">
           {t('events.comingSoon')}
         </p>
-        <CTAButton href="#footer">{t('events.btn')}</CTAButton>
+        <CTAButton href="https://calendly.com/evolvingtheconversation2/30min">{t('events.btn')}</CTAButton>
       </section>
     </div>
   );

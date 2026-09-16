@@ -13,13 +13,13 @@ const contactDetails = [
   {
     key: "email",
     icon: Mail,
-    value: "hello@evolvingtheconversation.com",
-    href: "mailto:hello@evolvingtheconversation.com",
+    value: "evolvingtheconversation2@gmail.com",
+    href: "mailto:evolvingtheconversation2@gmail.com",
   },
   {
     key: "address",
     icon: MapPin,
-    value: "4517 Washington Ave. Manchester, Kentucky 39495",
+    value: "Ste 1. Building 117, 69 E Street, Panama",
     href: undefined,
   },
 ] as const;

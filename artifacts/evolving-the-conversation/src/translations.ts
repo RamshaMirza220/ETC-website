@@ -15,8 +15,8 @@ export const translations = {
     footer: {
       tagline: "EVOLVING THE CONVERSATION",
       phone: "+507 6207-0905",
-      email: "hello@evolvingtheconversation.com",
-      address: "4517 Washington Ave. Manchester, Kentucky 39495",
+      email: "evolvingtheconversation2@gmail.com",
+      address: "Ste 1. Building 117, 69 E Street, Panama",
       companyLinks: "Company",
       helpLinks: "Help",
       support: "Customer Support",
@@ -38,7 +38,7 @@ export const translations = {
         tagWorkshops: "Workshops"
       },
       belief: {
-        label: "SHORT BELIEF",
+        label: "WHY COMMUNICATION MATTERS",
         title: "Because Communication Is Not Only About Words. It Is About Being Part Of The Conversation.",
         body: "In a world where technology can translate almost anything, English still helps professionals speak for themselves, build trust, and show up with confidence in the moments that matter."
       },
@@ -410,8 +410,8 @@ export const translations = {
     footer: {
       tagline: "EVOLVING THE CONVERSATION",
       phone: "+507 6207-0905",
-      email: "hello@evolvingtheconversation.com",
-      address: "4517 Washington Ave. Manchester, Kentucky 39495",
+       email: "evolvingtheconversation2@gmail.com",
+       address: "Ste 1. Building 117, 69 E Street, Panama",
       companyLinks: "Compañía",
       helpLinks: "Ayuda",
       support: "Soporte al Cliente",
@@ -433,7 +433,7 @@ export const translations = {
         tagWorkshops: "Talleres"
       },
       belief: {
-        label: "NUESTRA VISIÓN",
+        label: "POR QUÉ IMPORTA LA COMUNICACIÓN",
         title: "Porque la Comunicación No Son Solo Palabras. Es Ser Parte de la Conversación.",
         body: "En un mundo donde la tecnología puede traducir casi todo, el inglés sigue ayudando a los profesionales a hablar por sí mismos, construir confianza y mostrarse seguros en los momentos que importan."
       },

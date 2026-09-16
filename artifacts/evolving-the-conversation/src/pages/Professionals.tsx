@@ -72,7 +72,7 @@ export function Professionals() {
           <h2 className="font-heading font-black text-3xl md:text-4xl lg:text-5xl text-primary uppercase tracking-wide leading-tight mb-10">
             {t('professionals.closing.title')}
           </h2>
-          <CTAButton href="#footer" className="shadow-2xl">{t('professionals.closing.btn')}</CTAButton>
+          <CTAButton href="https://calendly.com/evolvingtheconversation2/30min" className="shadow-2xl">{t('professionals.closing.btn')}</CTAButton>
         </div>
       </section>
     </div>
