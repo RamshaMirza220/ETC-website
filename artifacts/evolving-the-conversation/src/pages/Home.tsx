@@ -20,7 +20,7 @@ export function Home() {
             {t('home.hero.subtext')}
           </p>
           <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 flex flex-col items-center gap-8">
-            <CTAButton href="https://calendly.com/evolvingtheconversation2/30min">{t('home.hero.btn')}</CTAButton>
+            <CTAButton href="https://koalendar.com/e/professional-english-consultation-or-consulta-corporativa-de-ingles-profesional">{t('home.hero.btn')}</CTAButton>
             
             <div className="flex flex-wrap justify-center gap-4">
               <span className="px-4 py-1.5 rounded-full border border-white/30 text-sm font-medium tracking-wide bg-white/5 backdrop-blur-sm">
@@ -135,7 +135,7 @@ export function Home() {
           <p className="text-xl text-accent mb-12">
             {t('home.closing.subtext')}
           </p>
-          <CTAButton href="https://calendly.com/evolvingtheconversation2/30min">{t('home.closing.btn')}</CTAButton>
+          <CTAButton href="https://koalendar.com/e/professional-english-consultation-or-consulta-corporativa-de-ingles-profesional">{t('home.closing.btn')}</CTAButton>
         </div>
       </section>
 

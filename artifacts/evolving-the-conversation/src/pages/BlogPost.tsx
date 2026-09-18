@@ -84,7 +84,7 @@ export function BlogPost() {
             {t('blogs.ctaTitle')}
           </h2>
           <a
-            href="https://calendly.com/evolvingtheconversation2/30min"
+            href="https://koalendar.com/e/professional-english-consultation-or-consulta-corporativa-de-ingles-profesional"
             target="_blank"
             rel="noopener noreferrer"
             className="px-10 py-4 border-2 border-white text-white font-heading font-black text-sm uppercase tracking-widest rounded-full hover:bg-white hover:text-primary transition-all duration-200"

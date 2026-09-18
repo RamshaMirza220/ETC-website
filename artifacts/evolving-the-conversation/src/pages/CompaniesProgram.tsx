@@ -45,7 +45,7 @@ export function CompaniesProgram() {
           </div>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <CTAButton href="https://calendly.com/evolvingtheconversation2/30min" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+            <CTAButton href="https://koalendar.com/e/professional-english-consultation-or-consulta-corporativa-de-ingles-profesional" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
               {t('companiesProgram.features.btnConsultation')}
             </CTAButton>
             <CTAButton href="#footer">
@@ -75,7 +75,7 @@ export function CompaniesProgram() {
                 ))}
               </ul>
               <div className="flex flex-wrap gap-4 mt-4">
-                <CTAButton variant="outline" href="https://calendly.com/evolvingtheconversation2/30min" className="border-primary text-primary hover:bg-primary hover:text-white">
+                <CTAButton variant="outline" href="https://koalendar.com/e/professional-english-consultation-or-consulta-corporativa-de-ingles-profesional" className="border-primary text-primary hover:bg-primary hover:text-white">
                   {t('companiesProgram.features.btnConsultation')}
                 </CTAButton>
                 <CTAButton href="#footer">
@@ -164,7 +164,7 @@ export function CompaniesProgram() {
                   <h4 className="font-heading font-bold text-xl mb-2 text-accent">{item.title}</h4>
                   <p className="text-gray-300">{item.body}</p>
                 </div>
-                <CTAButton variant="outline" href="https://calendly.com/evolvingtheconversation2/30min" className="shrink-0 text-sm py-2 px-4 whitespace-nowrap">
+                <CTAButton variant="outline" href="https://koalendar.com/e/professional-english-consultation-or-consulta-corporativa-de-ingles-profesional" className="shrink-0 text-sm py-2 px-4 whitespace-nowrap">
                   {t('companiesProgram.features.btnConsultation')}
                 </CTAButton>
               </div>
