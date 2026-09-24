@@ -5,15 +5,20 @@ import { logger } from "../lib/logger";
 const router: IRouter = Router();
 
 const MAX_NAME_LENGTH = 120;
+const MAX_COMPANY_LENGTH = 160;
 const MAX_EMAIL_LENGTH = 320;
 const MAX_PHONE_LENGTH = 40;
+const MAX_CATEGORY_LENGTH = 100;
 const MAX_MESSAGE_LENGTH = 5000;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 interface ContactPayload {
   fullName?: unknown;
+  company?: unknown;
   email?: unknown;
   phone?: unknown;
+  audience?: unknown;
+  interest?: unknown;
   message?: unknown;
 }
 
@@ -28,20 +33,28 @@ function removeControlCharacters(value: string): string {
 router.post("/contact", async (req, res) => {
   const body = (req.body ?? {}) as ContactPayload;
   const fullName = cleanText(body.fullName);
+  const company = cleanText(body.company);
   const email = cleanText(body.email).toLowerCase();
   const phone = cleanText(body.phone);
+  const audience = cleanText(body.audience);
+  const interest = cleanText(body.interest);
   const message = cleanText(body.message);
 
   const fieldErrors: Record<string, string> = {};
   if (!fullName) fieldErrors.fullName = "Full name is required.";
+  if (company.length > MAX_COMPANY_LENGTH) fieldErrors.company = "Company name is too long.";
   if (!email) fieldErrors.email = "Email is required.";
   else if (!emailPattern.test(email)) fieldErrors.email = "A valid email is required.";
   if (!phone) fieldErrors.phone = "Phone number is required.";
+  if (!audience) fieldErrors.audience = "Please select how you are contacting us.";
+  if (!interest) fieldErrors.interest = "Please select what you are interested in.";
   if (!message) fieldErrors.message = "Message is required.";
 
   if (fullName.length > MAX_NAME_LENGTH) fieldErrors.fullName = "Full name is too long.";
   if (email.length > MAX_EMAIL_LENGTH) fieldErrors.email = "Email is too long.";
   if (phone.length > MAX_PHONE_LENGTH) fieldErrors.phone = "Phone number is too long.";
+  if (audience.length > MAX_CATEGORY_LENGTH) fieldErrors.audience = "Selection is too long.";
+  if (interest.length > MAX_CATEGORY_LENGTH) fieldErrors.interest = "Selection is too long.";
   if (message.length > MAX_MESSAGE_LENGTH) fieldErrors.message = "Message is too long.";
 
   if (Object.keys(fieldErrors).length > 0) {
@@ -80,8 +93,11 @@ router.post("/contact", async (req, res) => {
   const subject = `New contact form message from ${safeName}`;
   const text = [
     `Name: ${fullName}`,
+    `Company: ${company || "Not provided"}`,
     `Email: ${email}`,
     `Phone: ${phone}`,
+    `Contact type: ${audience}`,
+    `Interested in: ${interest}`,
     "",
     "Message:",
     message,

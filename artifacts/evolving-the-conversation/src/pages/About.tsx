@@ -33,14 +33,8 @@ export function About() {
               <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-primary uppercase tracking-wide">
                 {t('about.founder.name')}
               </h2>
-              <p className="text-xl font-medium text-gray-700 italic border-l-4 border-accent pl-6 py-2">
-                "{t('about.founder.bullet1')}"
-              </p>
-              <h3 className="font-heading font-bold text-xl text-gray-800 mt-6 uppercase tracking-wider">
-                {t('about.founder.subheading')}
-              </h3>
               <p className="text-gray-600 text-lg leading-relaxed">
-                {t('about.founder.bullet2')}
+                {t('about.founder.body')}
               </p>
             </div>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">

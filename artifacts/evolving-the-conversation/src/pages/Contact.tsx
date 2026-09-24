@@ -26,15 +26,21 @@ const contactDetails = [
 
 type ContactFormData = {
   fullName: string;
+  company: string;
   email: string;
   phone: string;
+  audience: string;
+  interest: string;
   message: string;
 };
 
 const emptyForm: ContactFormData = {
   fullName: "",
+  company: "",
   email: "",
   phone: "",
+  audience: "",
+  interest: "",
   message: "",
 };
 
@@ -148,6 +154,22 @@ export function Contact() {
                   />
                 </div>
 
+                <div>
+                  <label htmlFor="contact-company" className="mb-2 block text-xs font-bold uppercase tracking-widest text-gray-500">
+                    {t("contact.company")}
+                  </label>
+                  <input
+                    id="contact-company"
+                    type="text"
+                    value={form.company}
+                    onChange={(event) => updateField("company", event.target.value)}
+                    placeholder={t("contact.companyPlaceholder")}
+                    maxLength={160}
+                    autoComplete="organization"
+                    className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm text-primary outline-none transition-colors placeholder:text-gray-400 focus:border-[#4FA3E3]"
+                  />
+                </div>
+
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label htmlFor="contact-email" className="mb-2 block text-xs font-bold uppercase tracking-widest text-gray-500">
@@ -182,6 +204,42 @@ export function Contact() {
                       className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm text-primary outline-none transition-colors placeholder:text-gray-400 focus:border-[#4FA3E3]"
                     />
                   </div>
+                </div>
+
+                <div>
+                  <label htmlFor="contact-audience" className="mb-2 block text-xs font-bold uppercase tracking-widest text-gray-500">
+                    {t("contact.audience")}
+                  </label>
+                  <select
+                    id="contact-audience"
+                    value={form.audience}
+                    onChange={(event) => updateField("audience", event.target.value)}
+                    required
+                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-primary outline-none transition-colors focus:border-[#4FA3E3]"
+                  >
+                    <option value="">{t("contact.audiencePlaceholder")}</option>
+                    {t("contact.audienceOptions").map((option: string) => (
+                      <option key={option} value={option}>{option}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="contact-interest" className="mb-2 block text-xs font-bold uppercase tracking-widest text-gray-500">
+                    {t("contact.interest")}
+                  </label>
+                  <select
+                    id="contact-interest"
+                    value={form.interest}
+                    onChange={(event) => updateField("interest", event.target.value)}
+                    required
+                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-primary outline-none transition-colors focus:border-[#4FA3E3]"
+                  >
+                    <option value="">{t("contact.interestPlaceholder")}</option>
+                    {t("contact.interestOptions").map((option: string) => (
+                      <option key={option} value={option}>{option}</option>
+                    ))}
+                  </select>
                 </div>
 
                 <div>

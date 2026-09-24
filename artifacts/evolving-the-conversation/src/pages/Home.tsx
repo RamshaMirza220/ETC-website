@@ -1,7 +1,7 @@
 import { useLanguage } from "@/context/LanguageContext";
 import { CTAButton } from "@/components/CTAButton";
 import { SectionHeading } from "@/components/SectionHeading";
-import { Users, Lightbulb, Puzzle } from "lucide-react";
+import { Users, Lightbulb, Puzzle, CheckCircle2 } from "lucide-react";
 
 export function Home() {
   const { t } = useLanguage();
@@ -75,7 +75,7 @@ export function Home() {
                 {t('home.paths.card1Body')}
               </p>
               <CTAButton href="/companies" variant="outline" className="w-full mt-auto">
-                {t('home.paths.exploreBtn')}
+                {t('home.paths.card1Button')}
               </CTAButton>
             </div>
             
@@ -86,7 +86,7 @@ export function Home() {
                 {t('home.paths.card2Body')}
               </p>
               <CTAButton href="/professionals" variant="outline" className="w-full mt-auto">
-                {t('home.paths.exploreBtn')}
+                {t('home.paths.card2Button')}
               </CTAButton>
             </div>
             
@@ -97,7 +97,7 @@ export function Home() {
                 {t('home.paths.card3Body')}
               </p>
               <CTAButton href="/events" variant="outline" className="w-full mt-auto">
-                {t('home.paths.exploreBtn')}
+                {t('home.paths.card3Button')}
               </CTAButton>
             </div>
           </div>
@@ -111,9 +111,14 @@ export function Home() {
           <h3 className="text-2xl md:text-3xl font-heading font-bold text-gray-800 mb-6 max-w-3xl mx-auto">
             {t('home.diff.subheading')}
           </h3>
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-16 leading-relaxed">
-            {t('home.diff.body')}
-          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mb-16 text-left">
+            {t('home.diff.items').map((item: string) => (
+              <div key={item} className="flex items-center gap-3 rounded-xl border border-gray-100 bg-gray-50 px-4 py-4 text-gray-700">
+                <CheckCircle2 className="w-5 h-5 shrink-0 text-accent" />
+                <span className="font-semibold">{item}</span>
+              </div>
+            ))}
+          </div>
           
           <div className="rounded-3xl overflow-hidden shadow-2xl relative w-full aspect-[21/9] bg-gray-100">
             <img 

@@ -30,9 +30,9 @@ export const translations = {
     },
     home: {
       hero: {
-        title: "PROFESSIONAL ENGLISH FOR THE CONVERSATIONS THAT MOVE YOU FORWARD",
-        subtext: "We help Latin American professionals and corporate teams communicate in English with clarity, confidence, and ease so they can participate, lead, interview, present, and grow in global workplaces.",
-        btn: "SCHEDULE A SESSION",
+        title: "Professional English for real workplace communication.",
+        subtext: "We help Latin American professionals and corporate teams communicate in English with more clarity, confidence, and ownership — so they can participate, lead, interview, present, and grow in global workplaces.",
+        btn: "Schedule a Conversation",
         tagCompany: "Company",
         tagProfessional: "Professional",
         tagWorkshops: "Workshops"
@@ -40,41 +40,41 @@ export const translations = {
       belief: {
         label: "WHY COMMUNICATION MATTERS",
         title: "Because Communication Is Not Only About Words. It Is About Being Part Of The Conversation.",
-        body: "In a world where technology can translate almost anything, English still helps professionals speak for themselves, build trust, and show up with confidence in the moments that matter."
+        body: "Many professionals understand English, but still hesitate when they need to speak in meetings, interviews, presentations, or conversations with global teams. Our programs help professionals move from passive understanding to active, confident communication."
       },
       paths: {
-        title: "CHOOSE YOUR PATH",
-        card1Title: "COMPANIES",
-        card1Body: "English training for teams that need to communicate clearly, participate actively, and build stronger relationships with global colleagues.",
-        card2Title: "PROFESSIONALS",
-        card2Body: "Support for professionals who want to stop staying quiet and start speaking with more confidence in real work situations.",
-        card3Title: "WORKSHOPS",
-        card3Body: "Practical sessions for professionals who want to keep practicing, learn useful phrases, and feel more comfortable using English.",
-        exploreBtn: "Explore"
+        title: "Choose the path that fits your goals.",
+        card1Title: "Companies",
+        card1Body: "For HR, L&D, and corporate teams that need English programs, assessments, workshops, accountability, and progress reports.",
+        card1Button: "Explore Company Programs",
+        card2Title: "Professionals",
+        card2Body: "For individual professionals who want to improve their English for meetings, presentations, conversations, pronunciation, and confidence.",
+        card2Button: "Explore Professional Programs",
+        card3Title: "Workshops",
+        card3Body: "For professionals who want ongoing practice, workshops, and a lower-commitment way to stay connected to English.",
+        card3Button: "Explore Workshops"
       },
       diff: {
         title: "WHAT MAKES US DIFFERENT",
-        subheading: "English With Structure, Confidence, And Humanity.",
-        body: "Our approach helps professionals practice real conversations, receive useful feedback, and build the confidence to communicate beyond translation."
+        subheading: "Our approach combines English, confidence, accountability, and real workplace communication.",
+        items: ["Confidence through clarity", "Real workplace relevance", "Learner ownership", "Growth mindset", "Structure and consistency", "Professional warmth", "Human connection"]
       },
       closing: {
-        title: "YOUR ENGLISH DOES NOT HAVE TO BE PERFECT TO BE POWERFUL.",
-        subtext: "The goal is progress, participation, confidence, and ease.",
-        btn: "SCHEDULE A SESSION"
+        title: "Not sure where to start?",
+        subtext: "Whether you are looking for support for your team, for yourself, or for your next career move, we can help you identify the best path.",
+        btn: "Schedule a Conversation"
       }
     },
     about: {
       hero: {
-        title: "UNLOCKING A NEW ERA OF ENGLISH LEARNING.",
-        body: "In a world where learning drives success, how we learn matters more than ever. By combining psychology with coaching, we've created a more effective way to learn English focused on building confidence, improving mindset, and making real, meaningful connections. It's not just about learning English, but using it with clarity and confidence in real life.",
+        title: "About Evolving the Conversation",
+        body: "Evolving the Conversation was created to help professionals do more than study English. It was created to help them use English to participate, connect, lead, and grow. We believe English is not just a subject. For many professionals, it is the bridge to visibility, opportunity, and confidence in global workplaces.",
         btn: "SCHEDULE A SESSION"
       },
       founder: {
         label: "OUR FOUNDER",
         name: "MARICHELLE CINIGLIO",
-        bullet1: "Every morning, I wake up motivated to help others learn and grow — to better understand themselves, connect with others, and build new skills.",
-        subheading: "EXPERIENCE & EDUCATION",
-        bullet2: "With over 25 years of experience in education, psychology, counseling, and coaching, she holds two postgraduate degrees and certifications in English, Spanish, and coaching. She has worked in the United States and Panama and developed programs focused on building confidence, shifting mindsets, and meaningful connection."
+        body: "Marichelle Ciniglio is the founder and director of Evolving the Conversation. Her background in education, psychology, counseling, and coaching has shaped a methodology that helps learners build both language ability and the confidence to use it. With more than 25 years of experience, she has worked with professionals, teams, and organizations to create learning experiences that are practical, structured, and deeply human."
       },
       pillars: {
         title: "OUR PILLARS",
@@ -87,9 +87,9 @@ export const translations = {
       },
       programs: {
         title: "OUR PROGRAMS",
-        corpTitle: "FOR CORPORATIONS",
+        corpTitle: "Companies",
         corpBullets: ["Group Program By Level", "1:1 Program For Key Roles", "Conversational Workshops", "Assessment + Report"],
-        profTitle: "FOR PROFESSIONALS",
+        profTitle: "Professionals",
         profBullets: ["Essential Package", "Progress Package", "Momentum Package"]
       },
       faq: {
@@ -213,10 +213,18 @@ export const translations = {
       formTitle: "SEND US A MESSAGE",
       fullName: "Full Name",
       fullNamePlaceholder: "Your full name",
+      company: "Company, if applicable",
+      companyPlaceholder: "Your company",
       email: "Email Address",
       emailPlaceholder: "you@example.com",
-      phone: "Phone / Contact Number",
+      phone: "WhatsApp / Phone",
       phonePlaceholder: "+507 0000-0000",
+      audience: "Are you contacting us as a company or as an individual professional?",
+      audiencePlaceholder: "Select one",
+      audienceOptions: ["Company", "Individual Professional"],
+      interest: "What are you interested in?",
+      interestPlaceholder: "Select one",
+      interestOptions: ["Corporate Program", "Professional English Program", "Workshops / Membership", "Assessment", "Other"],
       message: "Message",
       messagePlaceholder: "How can we help you?",
       sendMessage: "SEND MESSAGE",
@@ -425,9 +433,9 @@ export const translations = {
     },
     home: {
       hero: {
-        title: "INGLÉS PROFESIONAL PARA LAS CONVERSACIONES QUE TE IMPULSAN",
-        subtext: "Ayudamos a profesionales y equipos corporativos latinoamericanos a comunicarse en inglés con claridad, confianza y fluidez para que puedan participar, liderar, entrevistarse, presentar y crecer en entornos de trabajo globales.",
-        btn: "PROGRAMA UNA SESIÓN",
+        title: "Inglés profesional para la comunicación real en el trabajo.",
+        subtext: "Ayudamos a profesionales latinoamericanos y equipos corporativos a comunicarse en inglés con más claridad, confianza y autonomía — para que puedan participar, liderar, entrevistarse, presentar y crecer en entornos laborales globales.",
+        btn: "Programa una conversación",
         tagCompany: "Empresa",
         tagProfessional: "Profesional",
         tagWorkshops: "Talleres"
@@ -435,41 +443,41 @@ export const translations = {
       belief: {
         label: "POR QUÉ IMPORTA LA COMUNICACIÓN",
         title: "Porque la Comunicación No Son Solo Palabras. Es Ser Parte de la Conversación.",
-        body: "En un mundo donde la tecnología puede traducir casi todo, el inglés sigue ayudando a los profesionales a hablar por sí mismos, construir confianza y mostrarse seguros en los momentos que importan."
+        body: "Muchos profesionales entienden inglés, pero aún dudan cuando necesitan hablar en reuniones, entrevistas, presentaciones o conversaciones con equipos globales. Nuestros programas ayudan a los profesionales a pasar de la comprensión pasiva a una comunicación activa y segura."
       },
       paths: {
-        title: "ELIGE TU CAMINO",
-        card1Title: "EMPRESAS",
-        card1Body: "Capacitación en inglés para equipos que necesitan comunicarse con claridad, participar activamente y construir relaciones más sólidas con colegas globales.",
-        card2Title: "PROFESIONALES",
-        card2Body: "Apoyo a profesionales que quieren dejar de guardar silencio y empezar a hablar con más confianza en situaciones de trabajo reales.",
-        card3Title: "TALLERES",
-        card3Body: "Sesiones prácticas para profesionales que desean seguir practicando, aprender frases útiles y sentirse más cómodos usando el inglés.",
-        exploreBtn: "Explorar"
+        title: "Elige el camino que se ajuste a tus objetivos.",
+        card1Title: "Empresas",
+        card1Body: "Para equipos de RR. HH., L&D y corporativos que necesitan programas de inglés, evaluaciones, talleres, seguimiento y reportes de progreso.",
+        card1Button: "Explorar programas para empresas",
+        card2Title: "Profesionales",
+        card2Body: "Para profesionales individuales que quieren mejorar su inglés para reuniones, presentaciones, conversaciones, pronunciación y confianza.",
+        card2Button: "Explorar programas para profesionales",
+        card3Title: "Talleres",
+        card3Body: "Para profesionales que quieren práctica continua, talleres y una forma de menor compromiso para mantenerse conectados con el inglés.",
+        card3Button: "Explorar talleres"
       },
       diff: {
         title: "QUÉ NOS HACE DIFERENTES",
-        subheading: "Inglés con Estructura, Confianza y Humanidad.",
-        body: "Nuestro enfoque ayuda a los profesionales a practicar conversaciones reales, recibir comentarios útiles y desarrollar la confianza para comunicarse más allá de la traducción."
+        subheading: "Nuestro enfoque combina inglés, confianza, responsabilidad y comunicación real en el trabajo.",
+        items: ["Confianza a través de la claridad", "Relevancia laboral real", "Autonomía del estudiante", "Mentalidad de crecimiento", "Estructura y constancia", "Calidez profesional", "Conexión humana"]
       },
       closing: {
-        title: "TU INGLÉS NO TIENE QUE SER PERFECTO PARA SER PODEROSO.",
-        subtext: "El objetivo es el progreso, la participación, la confianza y la naturalidad.",
-        btn: "PROGRAMA UNA SESIÓN"
+        title: "¿No sabes por dónde empezar?",
+        subtext: "Ya sea que busques apoyo para tu equipo, para ti o para tu próximo paso profesional, podemos ayudarte a identificar el mejor camino.",
+        btn: "Programa una conversación"
       }
     },
     about: {
       hero: {
-        title: "INICIANDO UNA NUEVA ERA EN EL APRENDIZAJE DEL INGLÉS.",
-        body: "En un mundo donde el aprendizaje impulsa el éxito, la forma en que aprendemos importa más que nunca. Al combinar la psicología con el coaching, hemos creado una manera más efectiva de aprender inglés centrada en desarrollar la confianza, mejorar la mentalidad y lograr conexiones reales y significativas. No se trata solo de aprender inglés, sino de usarlo con claridad y seguridad en la vida real.",
+        title: "Sobre Evolving the Conversation",
+        body: "Evolving the Conversation fue creado para ayudar a los profesionales a hacer más que estudiar inglés. Fue creado para ayudarles a usar el inglés para participar, conectar, liderar y crecer. Creemos que el inglés no es solo una materia. Para muchos profesionales, es el puente hacia la visibilidad, las oportunidades y la confianza en entornos laborales globales.",
         btn: "PROGRAMA UNA SESIÓN"
       },
       founder: {
         label: "NUESTRA FUNDADORA",
         name: "MARICHELLE CINIGLIO",
-        bullet1: "Cada mañana me levanto motivada para ayudar a otros a aprender y crecer — a entenderse mejor, conectar con los demás y desarrollar nuevas habilidades.",
-        subheading: "EXPERIENCIA Y EDUCACIÓN",
-        bullet2: "Con más de 25 años de experiencia en educación, psicología, consejería y coaching, cuenta con dos posgrados y certificaciones en inglés, español y coaching. Ha trabajado en Estados Unidos y Panamá, y ha desarrollado programas enfocados en construir confianza, cambiar perspectivas y lograr conexiones significativas."
+        body: "Marichelle Ciniglio es la fundadora y directora de Evolving the Conversation. Su experiencia en educación, psicología, consejería y coaching ha dado forma a una metodología que ayuda a los estudiantes a desarrollar tanto sus habilidades lingüísticas como la confianza para usarlas. Con más de 25 años de experiencia, ha trabajado con profesionales, equipos y organizaciones para crear experiencias de aprendizaje prácticas, estructuradas y profundamente humanas."
       },
       pillars: {
         title: "NUESTROS PILARES",
@@ -482,9 +490,9 @@ export const translations = {
       },
       programs: {
         title: "NUESTROS PROGRAMAS",
-        corpTitle: "PARA CORPORACIONES",
+        corpTitle: "Empresas",
         corpBullets: ["Programa Grupal Por Nivel", "Programa 1:1 Para Roles Clave", "Talleres Conversacionales", "Evaluación + Informe"],
-        profTitle: "PARA PROFESIONALES",
+        profTitle: "Profesionales",
         profBullets: ["Paquete Esencial", "Paquete de Progreso", "Paquete Momentum"]
       },
       faq: {
@@ -608,10 +616,18 @@ export const translations = {
       formTitle: "ENVÍANOS UN MENSAJE",
       fullName: "Nombre Completo",
       fullNamePlaceholder: "Tu nombre completo",
+      company: "Empresa, si corresponde",
+      companyPlaceholder: "Tu empresa",
       email: "Correo Electrónico",
       emailPlaceholder: "tu@ejemplo.com",
-      phone: "Teléfono / Número de Contacto",
+      phone: "WhatsApp / Teléfono",
       phonePlaceholder: "+507 0000-0000",
+      audience: "¿Nos contactas como empresa o como profesional individual?",
+      audiencePlaceholder: "Selecciona una opción",
+      audienceOptions: ["Empresa", "Profesional Individual"],
+      interest: "¿En qué estás interesado?",
+      interestPlaceholder: "Selecciona una opción",
+      interestOptions: ["Programa Corporativo", "Programa de Inglés Profesional", "Talleres / Membresía", "Evaluación", "Otro"],
       message: "Mensaje",
       messagePlaceholder: "¿Cómo podemos ayudarte?",
       sendMessage: "ENVIAR MENSAJE",
