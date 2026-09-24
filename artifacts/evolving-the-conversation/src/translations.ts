@@ -98,21 +98,42 @@ export const translations = {
     },
     companies: {
       hero: {
-        title: "ENGLISH TRAINING THAT HELPS YOUR TEAM SPEAK UP, CONTRIBUTE, AND GROW.",
-        body: "We help companies support professionals who need English to participate in meetings, build trust with global teams, and grow with more confidence."
+        title: "Companies",
+        subheading: "English training for teams that need to communicate with more confidence at work.",
+        body: "We help companies develop professionals who can participate more actively in meetings, communicate more clearly with global teams, and take ownership of their English progress.",
+        btn: "Request a Corporate Consultation"
       },
       problem: {
-        labelProblem: "PROBLEM",
-        titleProblem: "Your Employees May Have Ideas, But English Can Keep Them Quiet.",
-        bodyProblem: "Many professionals understand English, but hesitate when the conversation moves too fast or the pressure feels too high.",
-        labelOffer: "WHAT WE OFFER",
-        titleOffer: "Corporate English Programs",
-        bodyOffer: "Structured English programs for teams that need practical workplace communication, stronger participation, and more confidence using English at work."
+        title: "Your team may know English, but are they using it with confidence?",
+        body: "Many professionals understand English, but still hesitate when they need to speak in meetings, ask questions, present updates, or communicate with international colleagues. Our programs are designed to help employees move from passive understanding to active participation."
       },
+      offer: {
+        title: "What We Offer",
+        cards: [
+          { title: "Corporate English Programs", body: "Structured group programs by level for companies that want consistent progress and practical workplace communication." },
+          { title: "Diagnostic Assessments", body: "English evaluations that help companies understand current level, strengths, gaps, and next steps for their team." },
+          { title: "Workshops", body: "Short, practical sessions focused on workplace communication skills like meetings, presentations, pronunciation, introductions, confidence, or participation." },
+          { title: "Professional English Coaching for Key Roles", body: "Focused support for professionals who need English for leadership, interviews, promotions, presentations, or higher-visibility roles." }
+        ]
+      },
+      different: {
+        title: "More than English classes. A structured path to participation and progress.",
+        items: ["workplace relevance", "confidence-building", "accountability", "attendance and participation tracking", "level-based structure", "progress reporting", "human support"]
+      },
+      who: {
+        title: "Who This Is For",
+        items: ["HR departments", "L&D teams", "multinational companies", "supervisors", "teams that work with English-speaking colleagues", "professionals preparing for more visibility", "employees who need English for meetings, presentations, reporting, and collaboration"]
+      },
+      expect: {
+        title: "What Companies Can Expect",
+        items: ["clear program structure", "level-based groups", "practical workplace content", "attendance tracking", "participation follow-up", "progress reports", "recommendations", "workshops or extra support when needed", "a learning experience that is professional, warm, and organized"]
+      },
+      callout: "English is not only a language skill. For many professionals, it is the bridge to more visibility, better opportunities, stronger leadership presence, and career growth.",
       closing: {
-        title: "LET'S CREATE A PROGRAM THAT SUPPORTS YOUR TEAM'S REAL COMMUNICATION NEEDS.",
-        btn: "REQUEST PROPOSAL"
-      }
+        title: "Let's build an English program that fits your team.",
+        body: "Whether your company needs a full English program, diagnostic assessments, workshops, or support for key employees, we can help you identify the best next step.",
+        btn: "Request a Corporate Consultation"
+      },
     },
     companiesProgram: {
       hero: {
@@ -174,26 +195,38 @@ export const translations = {
     },
     professionals: {
       hero: {
-        title: "PROFESSIONAL ENGLISH FOR THE CONVERSATIONS THAT MATTER AT WORK.",
-        body: "We help professionals communicate in English with clarity, confidence, and professional presence in meetings, presentations, and professional conversations."
+        title: "Professionals",
+        subheading: "Professional English for the conversations that matter at work.",
+        body: "We help professionals communicate in English with more clarity, confidence, and structure — so they can participate in meetings, present ideas, speak with colleagues, and feel more prepared in real workplace situations.",
+        btn: "Find the Right Program"
       },
       problem: {
-        label: "PROBLEM",
-        title: "You Have Ideas. English Should Not Be The Reason You Hold Them Back.",
-        body: "Many professionals understand English when it is read or heard, but they freeze, translate in their head, worry about mistakes, or hesitate the moment they have to speak."
+        title: "You may know more English than you feel ready to use.",
+        body: "Many professionals understand English, but still hesitate when it is time to speak. They overthink, translate in their head, worry about mistakes, or stay quiet even when they have something valuable to say. Our programs help professionals move from passive understanding to active communication."
       },
       help: {
-        title: "WHAT WE HELP YOU DO",
-        cards: [
-          { title: "Speak With More Confidence", body: "Practice real-world conversations so you can participate with less hesitation." },
-          { title: "Organize Your Ideas", body: "Learn how to explain your thoughts, questions, and opinions clearly." },
-          { title: "Sound More Professional", body: "Improve your pronunciation, vocabulary, structure, and delivery in workplace situations." },
-          { title: "Prepare For Important Moments", body: "Get support for meetings, presentations, interviews, and career-defining moments where English matters." }
-        ]
+        title: "What We Help With",
+        items: ["speaking more confidently", "participating in meetings", "giving short updates", "asking and answering questions", "explaining their work", "improving pronunciation", "organizing ideas", "preparing for presentations", "communicating with international colleagues", "building consistency with English practice"]
       },
-      closing: {
-        title: "YOUR ENGLISH DOES NOT HAVE TO BE PERFECT TO BE POWERFUL.",
-        btn: "SCHEDULE A SESSION"
+      approach: {
+        title: "This is not about memorizing more English. It is about learning how to use the English you have with more confidence and purpose.",
+        items: ["real workplace situations", "practical phrases", "confidence-building", "correction without shame", "structure and consistency", "learner ownership", "human support"]
+      },
+      who: {
+        title: "Who This Is For",
+        items: ["professionals working in multinational companies", "professionals who need English for meetings", "professionals who want better fluency", "professionals who feel nervous speaking", "professionals who want to prepare for more visibility", "professionals who need English for work travel, presentations, or communication with global teams", "professionals who want structure instead of random practice"]
+      },
+      callout: {
+        title: "Your English does not have to be perfect to be powerful.",
+        body: "The goal is not perfection. The goal is progress, participation, and confidence.",
+        btn: "Schedule a Conversation"
+      },
+      programs: {
+        body: "Programs are recommended after a short conversation based on your goals, level, schedule, and type of support needed.",
+        teasers: [
+          { title: "Momentum Program", body: "For beginner or low-level professionals who need to build a strong foundation and start using English in practical workplace and social situations.", badge: "Coming Soon", btn: "View Momentum Program", href: "/momentum" },
+          { title: "Professional English Practice Club", body: "For professionals who want ongoing workshops, practice, phrase guides, and a lower-commitment way to keep improving.", badge: "", btn: "Explore Workshops", href: "/workshops" }
+        ]
       }
     },
     events: {
@@ -501,21 +534,42 @@ export const translations = {
     },
     companies: {
       hero: {
-        title: "ENTRENAMIENTO EN INGLÉS QUE AYUDA A TU EQUIPO A HABLAR, CONTRIBUIR Y CRECER.",
-        body: "Ayudamos a las empresas a apoyar a los profesionales que necesitan inglés para participar en reuniones, construir confianza con equipos globales y crecer con mayor seguridad."
+        title: "Empresas",
+        subheading: "Inglés para equipos que necesitan comunicarse con más confianza en el trabajo.",
+        body: "Ayudamos a las empresas a desarrollar profesionales que puedan participar más activamente en reuniones, comunicarse con mayor claridad con equipos globales y asumir la responsabilidad de su progreso en inglés.",
+        btn: "Solicitar una Consulta Corporativa"
       },
       problem: {
-        labelProblem: "EL PROBLEMA",
-        titleProblem: "Tus Empleados Pueden Tener Ideas, Pero el Inglés Puede Mantenerlos Callados.",
-        bodyProblem: "Muchos profesionales entienden el inglés, pero dudan cuando la conversación va muy rápido o la presión se siente muy alta.",
-        labelOffer: "LO QUE OFRECEMOS",
-        titleOffer: "Programas de Inglés Corporativo",
-        bodyOffer: "Programas estructurados de inglés para equipos que necesitan comunicación práctica en el lugar de trabajo, mayor participación y más confianza al usar el inglés en el trabajo."
+        title: "Tu equipo puede saber inglés, pero ¿lo está usando con confianza?",
+        body: "Muchos profesionales entienden inglés, pero aún dudan cuando necesitan hablar en reuniones, hacer preguntas, presentar actualizaciones o comunicarse con colegas internacionales. Nuestros programas están diseñados para ayudar a los empleados a pasar de la comprensión pasiva a la participación activa."
       },
+      offer: {
+        title: "Lo Que Ofrecemos",
+        cards: [
+          { title: "Programas de Inglés Corporativo", body: "Programas grupales estructurados por nivel para empresas que buscan progreso constante y comunicación práctica en el trabajo." },
+          { title: "Evaluaciones Diagnósticas", body: "Evaluaciones de inglés que ayudan a las empresas a comprender el nivel actual, las fortalezas, las brechas y los próximos pasos para su equipo." },
+          { title: "Talleres", body: "Sesiones cortas y prácticas enfocadas en habilidades de comunicación laboral como reuniones, presentaciones, pronunciación, introducciones, confianza o participación." },
+          { title: "Coaching de Inglés Profesional para Roles Clave", body: "Apoyo enfocado para profesionales que necesitan inglés para liderazgo, entrevistas, ascensos, presentaciones o roles de mayor visibilidad." }
+        ]
+      },
+      different: {
+        title: "Más que clases de inglés. Un camino estructurado hacia la participación y el progreso.",
+        items: ["relevancia laboral", "desarrollo de la confianza", "responsabilidad", "seguimiento de asistencia y participación", "estructura basada en niveles", "reportes de progreso", "apoyo humano"]
+      },
+      who: {
+        title: "Para Quién Es",
+        items: ["departamentos de Recursos Humanos", "equipos de L&D", "empresas multinacionales", "supervisores", "equipos que trabajan con colegas angloparlantes", "profesionales que se preparan para tener mayor visibilidad", "empleados que necesitan inglés para reuniones, presentaciones, reportes y colaboración"]
+      },
+      expect: {
+        title: "Qué Pueden Esperar las Empresas",
+        items: ["estructura clara del programa", "grupos por nivel", "contenido práctico para el trabajo", "seguimiento de asistencia", "seguimiento de participación", "reportes de progreso", "recomendaciones", "talleres o apoyo adicional cuando sea necesario", "una experiencia de aprendizaje profesional, cálida y organizada"]
+      },
+      callout: "El inglés no es solo una habilidad lingüística. Para muchos profesionales, es el puente hacia una mayor visibilidad, mejores oportunidades, una presencia de liderazgo más sólida y crecimiento profesional.",
       closing: {
-        title: "CREEMOS UN PROGRAMA QUE APOYE LAS VERDADERAS NECESIDADES DE COMUNICACIÓN DE TU EQUIPO.",
-        btn: "SOLICITAR PROPUESTA"
-      }
+        title: "Construyamos un programa de inglés que se adapte a tu equipo.",
+        body: "Ya sea que tu empresa necesite un programa completo de inglés, evaluaciones diagnósticas, talleres o apoyo para empleados clave, podemos ayudarte a identificar el mejor siguiente paso.",
+        btn: "Solicitar una Consulta Corporativa"
+      },
     },
     companiesProgram: {
       hero: {
@@ -577,26 +631,38 @@ export const translations = {
     },
     professionals: {
       hero: {
-        title: "INGLÉS PROFESIONAL PARA LAS CONVERSACIONES QUE IMPORTAN EN EL TRABAJO.",
-        body: "Ayudamos a los profesionales a comunicarse en inglés con claridad, confianza y presencia en reuniones, presentaciones y conversaciones laborales."
+        title: "Profesionales",
+        subheading: "Inglés profesional para las conversaciones que importan en el trabajo.",
+        body: "Ayudamos a los profesionales a comunicarse en inglés con más claridad, confianza y estructura — para que puedan participar en reuniones, presentar ideas, hablar con colegas y sentirse más preparados en situaciones laborales reales.",
+        btn: "Encuentra el Programa Adecuado"
       },
       problem: {
-        label: "EL PROBLEMA",
-        title: "Tienes Ideas. El Inglés No Debería Ser la Razón Por la Que Te Las Guardes.",
-        body: "Muchos profesionales entienden el inglés cuando lo leen o lo escuchan, pero se bloquean, traducen mentalmente, se preocupan por cometer errores o dudan en el momento que tienen que hablar."
+        title: "Puede que sepas más inglés del que sientes listo para usar.",
+        body: "Muchos profesionales entienden inglés, pero aún dudan cuando llega el momento de hablar. Piensan demasiado, traducen mentalmente, se preocupan por cometer errores o se quedan callados incluso cuando tienen algo valioso que decir. Nuestros programas ayudan a los profesionales a pasar de la comprensión pasiva a la comunicación activa."
       },
       help: {
-        title: "EN QUÉ TE AYUDAMOS",
-        cards: [
-          { title: "Hablar Con Más Confianza", body: "Practica conversaciones reales para que puedas participar con menos dudas." },
-          { title: "Organizar Tus Ideas", body: "Aprende a explicar tus pensamientos, preguntas y opiniones con claridad." },
-          { title: "Sonar Más Profesional", body: "Mejora tu pronunciación, vocabulario, estructura y entrega en situaciones laborales." },
-          { title: "Prepararte Para Momentos Importantes", body: "Recibe apoyo para reuniones, presentaciones, entrevistas y momentos decisivos donde el inglés es clave." }
-        ]
+        title: "En Qué Ayudamos",
+        items: ["hablar con más confianza", "participar en reuniones", "dar actualizaciones breves", "hacer y responder preguntas", "explicar su trabajo", "mejorar la pronunciación", "organizar ideas", "prepararse para presentaciones", "comunicarse con colegas internacionales", "crear constancia en la práctica del inglés"]
       },
-      closing: {
-        title: "TU INGLÉS NO TIENE QUE SER PERFECTO PARA SER PODEROSO.",
-        btn: "PROGRAMA UNA SESIÓN"
+      approach: {
+        title: "Esto no se trata de memorizar más inglés. Se trata de aprender a usar el inglés que tienes con más confianza y propósito.",
+        items: ["situaciones laborales reales", "frases prácticas", "desarrollo de la confianza", "corrección sin vergüenza", "estructura y constancia", "autonomía del estudiante", "apoyo humano"]
+      },
+      who: {
+        title: "Para Quién Es",
+        items: ["profesionales que trabajan en empresas multinacionales", "profesionales que necesitan inglés para reuniones", "profesionales que quieren mejorar su fluidez", "profesionales que sienten nervios al hablar", "profesionales que quieren prepararse para tener mayor visibilidad", "profesionales que necesitan inglés para viajes de trabajo, presentaciones o comunicación con equipos globales", "profesionales que quieren estructura en lugar de práctica al azar"]
+      },
+      callout: {
+        title: "Tu inglés no tiene que ser perfecto para ser poderoso.",
+        body: "El objetivo no es la perfección. El objetivo es el progreso, la participación y la confianza.",
+        btn: "Programa una Conversación"
+      },
+      programs: {
+        body: "Los programas se recomiendan después de una breve conversación basada en tus objetivos, nivel, horario y tipo de apoyo que necesitas.",
+        teasers: [
+          { title: "Programa Momentum", body: "Para profesionales principiantes o de nivel bajo que necesitan construir una base sólida y comenzar a usar el inglés en situaciones laborales y sociales prácticas.", badge: "Próximamente", btn: "Ver Programa Momentum", href: "/momentum" },
+          { title: "Club de Práctica de Inglés Profesional", body: "Para profesionales que quieren talleres continuos, práctica, guías de frases y una forma de menor compromiso para seguir mejorando.", badge: "", btn: "Explorar Talleres", href: "/workshops" }
+        ]
       }
     },
     events: {
