@@ -11,6 +11,8 @@ import { About } from '@/pages/About';
 import { Companies } from '@/pages/Companies';
 import { CompaniesProgram } from '@/pages/CompaniesProgram';
 import { Professionals } from '@/pages/Professionals';
+import { Momentum } from '@/pages/Momentum';
+import { Workshops } from '@/pages/Workshops';
 import { Events } from '@/pages/Events';
 import { Blogs } from '@/pages/Blogs';
 import { BlogPost } from '@/pages/BlogPost';
@@ -28,6 +30,8 @@ function Router() {
       <Route path="/companies" component={Companies} />
       <Route path="/companies/program" component={CompaniesProgram} />
       <Route path="/professionals" component={Professionals} />
+      <Route path="/momentum" component={Momentum} />
+      <Route path="/workshops" component={Workshops} />
       <Route path="/events" component={Events} />
       <Route path="/blogs" component={Blogs} />
       <Route path="/blogs/:slug" component={BlogPost} />

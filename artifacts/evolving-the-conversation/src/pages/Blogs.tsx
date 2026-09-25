@@ -1,5 +1,6 @@
 import { useLanguage } from "@/context/LanguageContext";
 import { Link } from "wouter";
+import { useState } from "react";
 
 interface BlogPost {
   slug: string;
@@ -8,11 +9,17 @@ interface BlogPost {
   excerpt: string;
   date: string;
   body: string[];
+  categories: string[];
 }
 
 export function Blogs() {
   const { t } = useLanguage();
   const posts = t('blogs.posts') as unknown as BlogPost[];
+  const categories = t('blogs.categories') as { value: string; label: string }[];
+  const [activeCategory, setActiveCategory] = useState("all");
+  const filteredPosts = activeCategory === "all"
+    ? posts
+    : posts.filter((post) => post.categories?.includes(activeCategory));
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
@@ -24,8 +31,29 @@ export function Blogs() {
 
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12">
+            <p className="font-heading font-bold text-sm uppercase tracking-widest text-primary mb-4">
+              {t('blogs.filterLabel')}
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {categories.map((category) => (
+                <button
+                  key={category.value}
+                  type="button"
+                  onClick={() => setActiveCategory(category.value)}
+                  className={`rounded-full border-2 px-4 py-2 text-sm font-semibold transition-colors ${
+                    activeCategory === category.value
+                      ? "border-primary bg-primary text-white"
+                      : "border-primary/20 bg-white text-primary hover:border-primary hover:bg-primary/5"
+                  }`}
+                >
+                  {category.label}
+                </button>
+              ))}
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post) => (
+            {filteredPosts.map((post) => (
               <div key={post.slug} className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 flex flex-col group">
                 <div className="relative overflow-hidden aspect-[16/9]">
                   <img
@@ -54,6 +82,9 @@ export function Blogs() {
               </div>
             ))}
           </div>
+          {filteredPosts.length === 0 && (
+            <p className="py-12 text-center text-lg text-gray-500">{t('blogs.noPosts')}</p>
+          )}
         </div>
       </section>
     </div>

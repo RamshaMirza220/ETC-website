@@ -229,6 +229,51 @@ export const translations = {
         ]
       }
     },
+    momentum: {
+      hero: {
+        title: "Momentum Program",
+        subtitle: "For beginner or low-level professionals who need to build a strong English foundation and start using English with more confidence in practical workplace and social situations.",
+        badge: "Coming Soon",
+        btn: "Join the Waitlist"
+      },
+      structure: {
+        title: "A Strong Foundation for Real-World English",
+        cards: [
+          { title: "Who It Is For", body: "For beginner or low-level professionals who want a clear, supportive starting point for using English in practical workplace and social situations." },
+          { title: "What Problem It Solves", body: "Momentum helps learners move past uncertainty and build the foundation, confidence, and consistency needed to start participating in English." }
+        ],
+        note: "Full details, including the weekly structure, schedule, and pricing, will be added soon."
+      },
+      closing: {
+        title: "Be the first to know when Momentum launches.",
+        body: "Join the waitlist and we will share the next steps as the program becomes available.",
+        btn: "Join the Waitlist"
+      }
+    },
+    workshops: {
+      hero: {
+        title: "Professional English Practice Club",
+        subtitle: "A monthly membership or workshop program for professionals who want ongoing practice, real workplace phrases, and more confidence speaking in English.",
+        btn: "Join the Membership"
+      },
+      includes: {
+        title: "What It Includes",
+        items: ["Live workshops", "Practical English topics", "Phrase guides", "Recordings", "Monthly practice", "Invitations to upgrade into larger programs"]
+      },
+      pricing: {
+        title: "Membership Options",
+        options: [
+          { title: "Paid yearly", price: "$10/month when paid yearly", body: "An annual commitment with monthly access to the club." },
+          { title: "Paid monthly", price: "$25/month when paid monthly", body: "Flexible month-to-month access to ongoing practice." }
+        ],
+        note: "Membership sign-up opening soon."
+      },
+      closing: {
+        title: "Keep practicing. Keep participating. Keep growing.",
+        body: "Leave your details and we will let you know when membership sign-up opens.",
+        btn: "Join the Membership"
+      }
+    },
     events: {
       title: "EVENTS & WORKSHOPS",
       comingSoon: "Upcoming sessions coming soon.",
@@ -270,6 +315,21 @@ export const translations = {
     blogs: {
       title: "BLOG",
       readMore: "Read More",
+      filterLabel: "Explore by topic",
+      noPosts: "No posts found for this topic.",
+      categories: [
+        { value: "all", label: "All Topics" },
+        { value: "meetings", label: "English for Meetings" },
+        { value: "career-growth", label: "English for Career Growth" },
+        { value: "confidence", label: "Professional Confidence" },
+        { value: "presentations", label: "Presentations in English" },
+        { value: "interviews", label: "English for Interviews" },
+        { value: "pronunciation", label: "Pronunciation and Clarity" },
+        { value: "workplace", label: "Workplace Communication" },
+        { value: "hr-teams", label: "English for HR and Teams" },
+        { value: "learner-ownership", label: "Learner Ownership" },
+        { value: "leadership", label: "Leadership Communication" }
+      ],
       backToBlogs: "← Back to Blogs",
       postNotFound: "Post not found.",
       postNotFoundBack: "Back to Blog",
@@ -282,6 +342,7 @@ export const translations = {
           title: "Speaking Up in Meetings",
           excerpt: "How to stop hesitating and start contributing effectively.",
           date: "June 10, 2026",
+          categories: ["meetings", "confidence", "workplace", "learner-ownership"],
           body: [
             "Staying quiet in a meeting rarely has anything to do with a lack of ideas. More often, it's the fear of saying something the wrong way, or losing the flow of the conversation while translating in your head.",
             "The fastest way to change this is to prepare a small set of go-to phrases before the meeting even starts — simple, functional language for jumping in, agreeing, disagreeing politely, or asking for clarification.",
@@ -295,6 +356,7 @@ export const translations = {
           title: "Structuring Clear Emails",
           excerpt: "Simple formats for professional correspondence.",
           date: "June 24, 2026",
+          categories: ["career-growth", "workplace", "hr-teams"],
           body: [
             "A professional email doesn't need to be long to be effective — it needs to be structured. Most work emails follow a simple pattern: context, request, and next step.",
             "Start with one short line that states why you're writing. Avoid long introductions; get to the purpose in the first sentence.",
@@ -308,6 +370,7 @@ export const translations = {
           title: "Small Talk That Doesn't Feel Forced",
           excerpt: "Natural ways to connect with colleagues before getting to business.",
           date: "July 3, 2026",
+          categories: ["confidence", "workplace", "leadership"],
           body: [
             "Small talk in English can feel harder than the actual work conversation that follows it — mostly because it feels less predictable.",
             "The trick is to keep a small mental list of safe, easy topics: the weekend, the weather, a shared project, or something light about the day so far.",
@@ -321,6 +384,7 @@ export const translations = {
           title: "Preparing a Presentation in English",
           excerpt: "A simple framework to organize your ideas and speak with confidence.",
           date: "July 8, 2026",
+          categories: ["presentations", "confidence", "leadership"],
           body: [
             "A clear presentation doesn't require advanced vocabulary — it requires a clear structure the audience can follow.",
             "A simple, reliable framework is: what the topic is, why it matters, what the data or facts show, and what should happen next.",
@@ -334,6 +398,7 @@ export const translations = {
           title: "Phrases for Asking for Clarification",
           excerpt: "Useful expressions to ask for repetition or clarification without losing confidence.",
           date: "July 14, 2026",
+          categories: ["meetings", "workplace", "confidence"],
           body: [
             "Asking someone to repeat or clarify something is one of the most useful — and most underused — skills in professional English.",
             "Instead of nodding along when you're unsure, try: 'Could you say that again, please?' or 'Just to confirm, do you mean...?'",
@@ -347,6 +412,7 @@ export const translations = {
           title: "From Freezing to Fluent: Managing Nerves in English",
           excerpt: "Practical techniques to calm your mind before you speak.",
           date: "July 21, 2026",
+          categories: ["confidence", "pronunciation", "learner-ownership"],
           body: [
             "The 'freeze' moment — when your mind goes blank right when you need to speak — is one of the most common challenges professionals face in English.",
             "It usually happens because the brain is trying to translate and speak at the same time. Slowing down, even for two seconds, breaks that cycle.",
@@ -665,6 +731,51 @@ export const translations = {
         ]
       }
     },
+    momentum: {
+      hero: {
+        title: "Programa Momentum",
+        subtitle: "Para profesionales principiantes o de nivel bajo que necesitan construir una base sólida de inglés y comenzar a usarlo con más confianza en situaciones laborales y sociales prácticas.",
+        badge: "Próximamente",
+        btn: "Únete a la Lista de Espera"
+      },
+      structure: {
+        title: "Una Base Sólida para el Inglés de la Vida Real",
+        cards: [
+          { title: "Para Quién Es", body: "Para profesionales principiantes o de nivel bajo que quieren un punto de partida claro y comprensivo para usar el inglés en situaciones laborales y sociales prácticas." },
+          { title: "Qué Problema Resuelve", body: "Momentum ayuda a los estudiantes a superar la inseguridad y construir la base, confianza y constancia necesarias para comenzar a participar en inglés." }
+        ],
+        note: "Los detalles completos, incluyendo la estructura semanal, el horario y los precios, se agregarán pronto."
+      },
+      closing: {
+        title: "Sé de los primeros en saber cuándo se lance Momentum.",
+        body: "Únete a la lista de espera y compartiremos los próximos pasos cuando el programa esté disponible.",
+        btn: "Únete a la Lista de Espera"
+      }
+    },
+    workshops: {
+      hero: {
+        title: "Club de Práctica de Inglés Profesional",
+        subtitle: "Un programa de membresía mensual o talleres para profesionales que quieren práctica continua, frases reales del trabajo y más confianza al hablar inglés.",
+        btn: "Únete a la Membresía"
+      },
+      includes: {
+        title: "Qué Incluye",
+        items: ["Talleres en vivo", "Temas prácticos de inglés", "Guías de frases", "Grabaciones", "Práctica mensual", "Invitaciones para pasar a programas más completos"]
+      },
+      pricing: {
+        title: "Opciones de Membresía",
+        options: [
+          { title: "Pago anual", price: "$10/mes pagando anualmente", body: "Un compromiso anual con acceso mensual al club." },
+          { title: "Pago mensual", price: "$25/mes pagando mensualmente", body: "Acceso flexible mes a mes a la práctica continua." }
+        ],
+        note: "La inscripción a la membresía abrirá pronto."
+      },
+      closing: {
+        title: "Sigue practicando. Sigue participando. Sigue creciendo.",
+        body: "Déjanos tus datos y te avisaremos cuando se abra la inscripción a la membresía.",
+        btn: "Únete a la Membresía"
+      }
+    },
     events: {
       title: "EVENTOS Y TALLERES",
       comingSoon: "Próximas sesiones muy pronto.",
@@ -706,6 +817,21 @@ export const translations = {
     blogs: {
       title: "BLOG",
       readMore: "Leer Más",
+      filterLabel: "Explora por tema",
+      noPosts: "No se encontraron publicaciones para este tema.",
+      categories: [
+        { value: "all", label: "Todos los Temas" },
+        { value: "meetings", label: "Inglés para Reuniones" },
+        { value: "career-growth", label: "Inglés para el Crecimiento Profesional" },
+        { value: "confidence", label: "Confianza Profesional" },
+        { value: "presentations", label: "Presentaciones en Inglés" },
+        { value: "interviews", label: "Inglés para Entrevistas" },
+        { value: "pronunciation", label: "Pronunciación y Claridad" },
+        { value: "workplace", label: "Comunicación en el Trabajo" },
+        { value: "hr-teams", label: "Inglés para Recursos Humanos y Equipos" },
+        { value: "learner-ownership", label: "Autonomía del Estudiante" },
+        { value: "leadership", label: "Comunicación de Liderazgo" }
+      ],
       backToBlogs: "← Volver al Blog",
       postNotFound: "Publicación no encontrada.",
       postNotFoundBack: "Volver al Blog",
@@ -718,6 +844,7 @@ export const translations = {
           title: "Hablar en las Reuniones",
           excerpt: "Cómo dejar de dudar y empezar a contribuir de forma efectiva.",
           date: "10 de junio de 2026",
+          categories: ["meetings", "confidence", "workplace", "learner-ownership"],
           body: [
             "Quedarse en silencio en una reunión rara vez tiene que ver con falta de ideas. Más frecuentemente, es el miedo a decir algo de la manera equivocada, o perder el hilo de la conversación mientras se traduce mentalmente.",
             "La forma más rápida de cambiar esto es preparar un conjunto de frases de apoyo antes de que empiece la reunión — lenguaje simple y funcional para intervenir, estar de acuerdo, estar en desacuerdo con cortesía o pedir una aclaración.",
@@ -731,6 +858,7 @@ export const translations = {
           title: "Cómo Estructurar Correos Claros",
           excerpt: "Formatos simples para la correspondencia profesional.",
           date: "24 de junio de 2026",
+          categories: ["career-growth", "workplace", "hr-teams"],
           body: [
             "Un correo profesional no tiene que ser largo para ser efectivo — tiene que estar estructurado. La mayoría de los correos de trabajo siguen un patrón simple: contexto, solicitud y próximo paso.",
             "Empieza con una línea corta que explique por qué escribes. Evita introducciones largas; ve al propósito en la primera oración.",
@@ -744,6 +872,7 @@ export const translations = {
           title: "Small Talk Sin Que Se Sienta Forzado",
           excerpt: "Formas naturales de conectar con colegas antes de hablar de trabajo.",
           date: "3 de julio de 2026",
+          categories: ["confidence", "workplace", "leadership"],
           body: [
             "La pequeña conversación en inglés puede sentirse más difícil que la conversación de trabajo que le sigue — principalmente porque parece menos predecible.",
             "El truco está en tener una pequeña lista mental de temas seguros y fáciles: el fin de semana, el clima, un proyecto compartido o algo ligero sobre el día hasta el momento.",
@@ -757,6 +886,7 @@ export const translations = {
           title: "Cómo Preparar una Presentación en Inglés",
           excerpt: "Un método simple para organizar tus ideas y hablar con confianza.",
           date: "8 de julio de 2026",
+          categories: ["presentations", "confidence", "leadership"],
           body: [
             "Una presentación clara no requiere vocabulario avanzado — requiere una estructura clara que el público pueda seguir.",
             "Un esquema simple y confiable es: de qué trata el tema, por qué es importante, qué muestran los datos o los hechos, y qué debería suceder a continuación.",
@@ -770,6 +900,7 @@ export const translations = {
           title: "Frases para Pedir Aclaraciones",
           excerpt: "Expresiones útiles para pedir que repitan o aclaren algo sin perder confianza.",
           date: "14 de julio de 2026",
+          categories: ["meetings", "workplace", "confidence"],
           body: [
             "Pedir a alguien que repita o aclare algo es una de las habilidades más útiles — y menos utilizadas — del inglés profesional.",
             "En lugar de asentir cuando no estás seguro, intenta: '¿Podría repetir eso, por favor?' o '¿Solo para confirmar, te refieres a...?'",
@@ -783,6 +914,7 @@ export const translations = {
           title: "De Bloquearte a Fluir: Manejar los Nervios en Inglés",
           excerpt: "Técnicas prácticas para calmar la mente antes de hablar.",
           date: "21 de julio de 2026",
+          categories: ["confidence", "pronunciation", "learner-ownership"],
           body: [
             "El momento de 'bloqueo' — cuando tu mente se queda en blanco justo cuando necesitas hablar — es uno de los desafíos más comunes que enfrentan los profesionales en inglés.",
             "Generalmente ocurre porque el cerebro intenta traducir y hablar al mismo tiempo. Desacelerar, incluso por dos segundos, rompe ese ciclo.",
